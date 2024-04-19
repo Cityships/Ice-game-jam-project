@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://clrgpm7230fwn"]
+
+[ext_resource type="Script" path="res://assets/scripts/playerscript.gd" id="1_sks3k"]
+[ext_resource type="Texture2D" uid="uid://dh4hcmmicr14d" path="res://assets/engineering_art/icon.svg" id="2_csa7s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4uw6"]
+
+[node name="player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_sks3k")
+speed = 500.0
+accel = 200.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_csa7s")
+
+[node name="player collision collision" type="CollisionShape2D" parent="."]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_s4uw6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.8, 0.8)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="options menu" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1150.0
+offset_bottom = 650.0
+
+[node name="quit" type="Button" parent="CanvasLayer/options menu"]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 60.0
+offset_right = 537.0
+offset_bottom = 91.0
+scale = Vector2(5, 5)
+text = "quit
+"
+
+[node name="options" type="Button" parent="CanvasLayer/options menu"]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 254.0
+offset_right = 495.0
+offset_bottom = 285.0
+scale = Vector2(5, 5)
+text = "options
+"
+
+[node name="credits" type="Button" parent="CanvasLayer/options menu"]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 446.0
+offset_right = 504.0
+offset_bottom = 477.0
+scale = Vector2(5, 5)
+text = "credits"

@@ -1,0 +1,103 @@
+[gd_scene load_steps=12 format=3 uid="uid://bdq5kq1jq2k53"]
+
+[ext_resource type="PackedScene" uid="uid://clrgpm7230fwn" path="res://assets/prefabs/player.tscn" id="1_8pouc"]
+[ext_resource type="Texture2D" uid="uid://f3wd7jvblv43" path="res://assets/engineering_art/lightsquare.png" id="1_fna5p"]
+[ext_resource type="Texture2D" uid="uid://b0n2q4fmfe30b" path="res://assets/engineering_art/darksquare.png" id="2_sn8ib"]
+[ext_resource type="Texture2D" uid="uid://cqexeaiaeduhl" path="res://assets/engineering_art/triangle.png" id="3_5kcwf"]
+[ext_resource type="Script" path="res://assets/scripts/drawcollisionpolygon.gd" id="4_buvgf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_20oqg"]
+texture = ExtResource("1_fna5p")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8stx6"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_20oqg")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fdvin"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5m72"]
+texture = ExtResource("2_sn8ib")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_42pgn"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_fdvin")
+sources/0 = SubResource("TileSetAtlasSource_l5m72")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1bwvo"]
+radius = 300.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_8pouc")]
+position = Vector2(421, 1116)
+
+[node name="Map" type="Node2D" parent="."]
+
+[node name="(art) floor tiles (z=-10)" type="TileMap" parent="Map"]
+z_index = -10
+tile_set = SubResource("TileSet_8stx6")
+format = 2
+layer_0/tile_data = PackedInt32Array(3, 0, 0, 131074, 0, 0, 65538, 0, 0, 2, 0, 0, -65534, 0, 0, -131070, 0, 0, -196607, 0, 0, -196608, 0, 0, -131072, 0, 0, -65537, 0, 0, -65538, 0, 0, -65539, 0, 0, -3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, -65535, 0, 0, -131071, 0, 0, 1, 0, 0, 65537, 0, 0, 65536, 0, 0, 65535, 0, 0, -1, 0, 0, -65536, 0, 0, 0, 0, 0, 131071, 0, 0, 131070, 0, 0, 65534, 0, 0, -2, 0, 0, 65531, 0, 0, 65532, 0, 0, 262143, 0, 0, 262142, 0, 0, 262141, 0, 0, 262140, 0, 0, 196604, 0, 0, 196603, 0, 0, 131067, 0, 0, 131068, 0, 0, 196605, 0, 0, 458750, 0, 0, 524286, 0, 0, 589822, 0, 0, 655358, 0, 0, 720894, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 0, 0, 655359, 0, 0, 720895, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 589826, 0, 0, 655362, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 655363, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 589828, 0, 0, 655364, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 0, 0, 655365, 0, 0, 393211, 0, 0, 458747, 0, 0, 524283, 0, 0, 589819, 0, 0, 655355, 0, 0, 720891, 0, 0, 393212, 0, 0, 458748, 0, 0, 524284, 0, 0, 589820, 0, 0, 655356, 0, 0, 720892, 0, 0, 393213, 0, 0, 458749, 0, 0, 524285, 0, 0, 589821, 0, 0, 655357, 0, 0, 720893, 0, 0, 393214, 0, 0, 393215, 0, 0, 327677, 0, 0, 327678, 0, 0, 196602, 0, 0, 262138, 0, 0, 327674, 0, 0, 262139, 0, 0, 327675, 0, 0, 393210, 0, 0, 458746, 0, 0, 524282, 0, 0, 589818, 0, 0, 262137, 0, 0, 327673, 0, 0, 393209, 0, 0, 458745, 0, 0, 524281, 0, 0)
+
+[node name="map physics geometry" type="Node2D" parent="Map"]
+
+[node name="TileMap walls" type="TileMap" parent="Map/map physics geometry"]
+tile_set = SubResource("TileSet_42pgn")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131074, 0, 0, -131073, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -131069, 0, 0, -65533, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 196610, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, -131075, 0, 0, -131076, 0, 0, 393222, 0, 0, 458758, 0, 0, 524294, 0, 0, 589830, 0, 0, 720897, 0, 0, 720896, 0, 0, 786431, 0, 0, -196608, 0, 0, -65540, 0, 0, -4, 0, 0, -5, 0, 0, -6, 0, 0, 65530, 0, 0, 131066, 0, 0)
+
+[node name="polygonal walls" type="StaticBody2D" parent="Map/map physics geometry"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/map physics geometry/polygonal walls"]
+polygon = PackedVector2Array(294, 438, 187, 260, -193, 443, -143, 746, 284, 874)
+script = ExtResource("4_buvgf")
+
+[node name="Polygon2D" type="Polygon2D" parent="Map/map physics geometry/polygonal walls/CollisionPolygon2D"]
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Map/map physics geometry/polygonal walls"]
+polygon = PackedVector2Array(-325, 551, -439, 423, -594, 586, -395, 754)
+script = ExtResource("4_buvgf")
+
+[node name="Polygon2D" type="Polygon2D" parent="Map/map physics geometry/polygonal walls/CollisionPolygon2D2"]
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Map/map physics geometry/polygonal walls"]
+polygon = PackedVector2Array(-96, 1460, -214, 1292, -433, 1319, -425, 1504)
+script = ExtResource("4_buvgf")
+
+[node name="Polygon2D" type="Polygon2D" parent="Map/map physics geometry/polygonal walls/CollisionPolygon2D3"]
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Map/map physics geometry/polygonal walls"]
+position = Vector2(645, -1)
+polygon = PackedVector2Array(-96, 1460, -214, 1292, -433, 1319, -425, 1504)
+script = ExtResource("4_buvgf")
+
+[node name="Polygon2D" type="Polygon2D" parent="Map/map physics geometry/polygonal walls/CollisionPolygon2D4"]
+color = Color(0, 0, 0, 1)
+
+[node name="next level" type="Sprite2D" parent="Map"]
+modulate = Color(0, 0.898039, 0.313726, 1)
+position = Vector2(2.00003, -158)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_5kcwf")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="Map/next level"]
+position = Vector2(0, 100)
+shape = SubResource("CircleShape2D_1bwvo")
+target_position = Vector2(0, 0)
+
+[node name="spawn" type="Sprite2D" parent="Map"]
+modulate = Color(0.533333, 0.713726, 0.827451, 1)
+position = Vector2(592, 1108)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_5kcwf")

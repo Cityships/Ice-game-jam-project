@@ -1,0 +1,14 @@
+Polygon2D
+Sprite2D
+Button
+ColorRect
+CanvasLayer
+CollisionPolygon2D
+ShapeCast2D
+TileMap
+Node2D
+CollisionShape2D
+StaticBody2D
+Camera2D
+Area2D
+CharacterBody2D

@@ -1,4 +1,4 @@
+res://assets/scenes/scene3.tscn
 res://assets/prefabs/player.tscn
 res://assets/scenes/scene2.tscn
 res://assets/scenes/scene1.tscn
-res://assets/scripts/drawcollisionpolygon.gd

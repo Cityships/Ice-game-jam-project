@@ -25,7 +25,7 @@ texture_region_size = Vector2i(128, 128)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 
-[sub_resource type="TileSet" id="TileSet_42pgn"]
+[sub_resource type="TileSet" id="TileSet_vkxww"]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_fdvin")
@@ -50,7 +50,7 @@ layer_0/tile_data = PackedInt32Array(3, 0, 0, 131074, 0, 0, 65538, 0, 0, 2, 0, 0
 [node name="map physics geometry" type="Node2D" parent="Map"]
 
 [node name="TileMap walls" type="TileMap" parent="Map/map physics geometry"]
-tile_set = SubResource("TileSet_42pgn")
+tile_set = SubResource("TileSet_vkxww")
 format = 2
 layer_0/tile_data = PackedInt32Array(-131074, 0, 0, -131073, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -131069, 0, 0, -65533, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 196610, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, -131075, 0, 0, -131076, 0, 0, 393222, 0, 0, 458758, 0, 0, 524294, 0, 0, 589830, 0, 0, 720897, 0, 0, 720896, 0, 0, 786431, 0, 0, -196608, 0, 0, -65540, 0, 0, -4, 0, 0, -5, 0, 0, -6, 0, 0, 65530, 0, 0, 131066, 0, 0)
 

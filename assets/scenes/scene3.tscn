@@ -37,21 +37,21 @@ position = Vector2(-330, 20)
 
 [node name="Map" type="Node2D" parent="."]
 
-[node name="Node2D" type="Node2D" parent="Map"]
+[node name="Floor" type="Node2D" parent="Map"]
 
-[node name="TileMap floor" type="TileMap" parent="Map/Node2D"]
+[node name="TileMap floor" type="TileMap" parent="Map/Floor"]
 z_index = -10
 tile_set = SubResource("TileSet_04wjh")
 format = 2
 layer_0/tile_data = PackedInt32Array(-2, 0, 0, -3, 0, 0, -4, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 131069, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131071, 0, 0, 131070, 0, 0, -65531, 0, 0, -65532, 0, 0, 4, 0, 0, 5, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 327681, 0, 0, 262145, 0, 0, 327679, 0, 0, 327682, 0, 0, 393218, 0, 0, 393217, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 0, 0, 589828, 0, 0, 655364, 0, 0, 655363, 0, 0, 589827, 0, 0, 589826, 0, 0, 589825, 0, 0, 524289, 0, 0, 524288, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 655362, 0, 0, 720898, 0, 0, 720897, 0, 0, 720896, 0, 0, 655360, 0, 0, 720895, 0, 0, 655361, 0, 0, 589824, 0, 0, 655359, 0, 0, 655358, 0, 0, 655357, 0, 0, 655356, 0, 0, 655355, 0, 0, 655354, 0, 0, 589818, 0, 0, 589819, 0, 0, 589817, 0, 0, 655353, 0, 0, 720891, 0, 0, 720890, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0)
 
-[node name="polygonal floor" type="Node2D" parent="Map/Node2D"]
+[node name="polygonal floor" type="Node2D" parent="Map/Floor"]
 
-[node name="Polygon2D" type="Polygon2D" parent="Map/Node2D/polygonal floor"]
+[node name="Polygon2D" type="Polygon2D" parent="Map/Floor/polygonal floor"]
 z_index = -10
 polygon = PackedVector2Array(-31, 185, 229, 274, 250, 425, 389, 504, 437, 691, 341, 760, -110, 297)
 
-[node name="Polygon2D2" type="Polygon2D" parent="Map/Node2D/polygonal floor"]
+[node name="Polygon2D2" type="Polygon2D" parent="Map/Floor/polygonal floor"]
 z_index = -10
 polygon = PackedVector2Array(-306, 324, -120, 441, 220, 844, 60, 997, -44, 671, -304, 611, -371, 334)
 

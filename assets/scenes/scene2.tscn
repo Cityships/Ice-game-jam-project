@@ -41,7 +41,7 @@ position = Vector2(421, 1116)
 
 [node name="Map" type="Node2D" parent="."]
 
-[node name="(art) floor tiles (z=-10)" type="TileMap" parent="Map"]
+[node name="Tilemap floor" type="TileMap" parent="Map"]
 z_index = -10
 tile_set = SubResource("TileSet_8stx6")
 format = 2

@@ -1,4 +1,6 @@
-res://assets/scenes/scene3.tscn
 res://assets/prefabs/player.tscn
+res://assets/prefabs/floortile.tres
+res://assets/prefabs/walltile.tres
 res://assets/scenes/scene2.tscn
 res://assets/scenes/scene1.tscn
+res://assets/scenes/scene3.tscn

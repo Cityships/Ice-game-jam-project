@@ -20,6 +20,7 @@ func _physics_process(delta):
 		anim.play("walking")
 	else:
 		anim.play("idle")
+	direction = direction.normalized()
 	velocity.x = move_toward(velocity.x, speed * direction.x, accel)
 	velocity.y = move_toward(velocity.y, speed * direction.y, accel)
 	# Add the gravity.

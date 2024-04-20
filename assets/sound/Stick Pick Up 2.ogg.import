@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://5ebslku2j53d"
+path="res://.godot/imported/Stick Pick Up 2.ogg-2e6712fc83947bebee233499102c72b7.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/Stick Pick Up 2.ogg"
+dest_files=["res://.godot/imported/Stick Pick Up 2.ogg-2e6712fc83947bebee233499102c72b7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,6 +1,6 @@
+Timer
 RayCast2D
 ShapeCast2D
-Timer
 Sprite2D
 CollisionShape2D
 AnimationPlayer

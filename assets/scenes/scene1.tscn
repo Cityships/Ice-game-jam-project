@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://assets/scripts/drawcollisionpolygon.gd" id="4_ixb01"]
 [ext_resource type="Texture2D" uid="uid://cqexeaiaeduhl" path="res://assets/engineering_art/triangle.png" id="4_mdlss"]
 [ext_resource type="PackedScene" uid="uid://c2oe1f313mrd5" path="res://assets/prefabs/big_bat_enemy.tscn" id="6_slvro"]
-[ext_resource type="Texture2D" uid="uid://csj0o53u1oqti" path="res://assets/art/wood.png" id="7_mdoqa"]
+[ext_resource type="Texture2D" uid="uid://bqirkwxpwlj6r" path="res://assets/art/campfire.png" id="7_gnrtx"]
 [ext_resource type="Texture2D" uid="uid://chlrr8crai1ce" path="res://assets/art/particles/softglow2.png" id="8_51lwf"]
 [ext_resource type="Texture2D" uid="uid://b0s5n1nqnmigf" path="res://assets/art/particles/puff1.png" id="9_7oml4"]
 [ext_resource type="PackedScene" uid="uid://fm1okurh8qdq" path="res://assets/prefabs/small_bat_enemy.tscn" id="10_dxewc"]
@@ -33,6 +33,8 @@ curve = SubResource("Curve_uu7ip")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4jnmg"]
 particle_flag_disable_z = true
 gravity = Vector3(0, -100, 0)
+scale_min = 1.5
+scale_max = 2.5
 scale_curve = SubResource("CurveTexture_68h3w")
 color_ramp = SubResource("GradientTexture1D_dpdb5")
 turbulence_noise_strength = 1.84
@@ -126,27 +128,32 @@ gravity_scale = 0.0
 shape = SubResource("CircleShape2D_2epjk")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-texture = ExtResource("7_mdoqa")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="RigidBody2D"]
-modulate = Color(0.960784, 0.517647, 0, 0.545098)
-z_index = 1
-process_material = SubResource("ParticleProcessMaterial_4jnmg")
-texture = ExtResource("8_51lwf")
-trail_lifetime = 0.73
-trail_sections = 12
-trail_section_subdivisions = 6
+texture = ExtResource("7_gnrtx")
 
 [node name="GPUParticles2D2" type="GPUParticles2D" parent="RigidBody2D"]
 modulate = Color(1, 0.219937, 0.0582709, 0.545098)
 z_index = 1
+position = Vector2(0, -51)
 process_material = SubResource("ParticleProcessMaterial_4jnmg")
 texture = ExtResource("8_51lwf")
+lifetime = 2.0
+trail_lifetime = 0.73
+trail_sections = 12
+trail_section_subdivisions = 6
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="RigidBody2D"]
+modulate = Color(0.960784, 0.517647, 0, 0.545098)
+z_index = 1
+position = Vector2(0, -51)
+process_material = SubResource("ParticleProcessMaterial_4jnmg")
+texture = ExtResource("8_51lwf")
+trail_enabled = true
 trail_lifetime = 0.73
 trail_sections = 12
 trail_section_subdivisions = 6
 
 [node name="GPUParticles2D3" type="GPUParticles2D" parent="RigidBody2D"]
+position = Vector2(0, -51)
 process_material = SubResource("ParticleProcessMaterial_6nv3p")
 texture = ExtResource("9_7oml4")
 

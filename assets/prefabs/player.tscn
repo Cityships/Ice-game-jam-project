@@ -1,18 +1,194 @@
-[gd_scene load_steps=4 format=3 uid="uid://clrgpm7230fwn"]
+[gd_scene load_steps=11 format=3 uid="uid://clrgpm7230fwn"]
 
 [ext_resource type="Script" path="res://assets/scripts/playerscript.gd" id="1_sks3k"]
-[ext_resource type="Texture2D" uid="uid://dh4hcmmicr14d" path="res://assets/engineering_art/icon.svg" id="2_csa7s"]
+[ext_resource type="Texture2D" uid="uid://ix5rvokcxgy" path="res://assets/art/yetispritesheet.png" id="2_mwim6"]
+[ext_resource type="Shader" path="res://assets/shaders/vignette.gdshader" id="3_j28ff"]
+[ext_resource type="Texture2D" uid="uid://cwn54o2sfeyns" path="res://assets/art/spot.png" id="4_6xj6y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4uw6"]
 
+[sub_resource type="Animation" id="Animation_dvpon"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_mwim6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pkyww"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_mwim6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame_coords")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sexps"]
+resource_name = "walking"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_mwim6")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 3, 4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -35), Vector2(0, -40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rtm1s"]
+_data = {
+"RESET": SubResource("Animation_dvpon"),
+"idle": SubResource("Animation_pkyww"),
+"walking": SubResource("Animation_sexps")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_opivl"]
+shader = ExtResource("3_j28ff")
+shader_parameter/color = null
+shader_parameter/multiplier = -0.1
+shader_parameter/softness = 1.0
+
 [node name="player" type="CharacterBody2D"]
+collision_layer = 8
 motion_mode = 1
 script = ExtResource("1_sks3k")
 speed = 500.0
 accel = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_csa7s")
+texture = ExtResource("2_mwim6")
+hframes = 3
+vframes = 2
+frame = 1
 
 [node name="player collision collision" type="CollisionShape2D" parent="."]
 scale = Vector2(6, 6)
@@ -21,10 +197,22 @@ shape = SubResource("RectangleShape2D_s4uw6")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.8, 0.8)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rtm1s")
+}
+
+[node name="shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.529412)
+z_index = -1
+position = Vector2(-6, 100)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("4_6xj6y")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="options menu" type="ColorRect" parent="CanvasLayer"]
+visible = false
 offset_right = 1150.0
 offset_bottom = 650.0
 
@@ -56,3 +244,21 @@ offset_right = 504.0
 offset_bottom = 477.0
 scale = Vector2(5, 5)
 text = "credits"
+
+[node name="vignette" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_opivl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(856, 681)
+color = Color(0, 0, 0, 1)
+
+[node name="screen hue" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25098, 0.223529, 0.733333, 0.137255)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c21g6cw8376k0"
+path="res://.godot/imported/Fire Spark-001.ogg-c8fc8a139c88ab543093528539f2b055.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/Fire Spark-001.ogg"
+dest_files=["res://.godot/imported/Fire Spark-001.ogg-c8fc8a139c88ab543093528539f2b055.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -151,3 +151,4 @@ process_material = SubResource("ParticleProcessMaterial_6nv3p")
 texture = ExtResource("9_7oml4")
 
 [node name="SmallBatEnemy" parent="." instance=ExtResource("10_dxewc")]
+position = Vector2(583, 925)

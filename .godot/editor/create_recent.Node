@@ -1,3 +1,5 @@
+AudioStreamPlayer2D
+AudioStreamPlayer
 RayCast2D
 ShapeCast2D
 Timer
@@ -10,5 +12,3 @@ RigidBody2D
 Node2D
 AnimationTree
 ColorRect
-Control
-CanvasLayer

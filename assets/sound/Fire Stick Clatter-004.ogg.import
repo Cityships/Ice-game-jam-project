@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cetwjg0712551"
+path="res://.godot/imported/Fire Stick Clatter-004.ogg-4c84e2836855ea5a3fd0a5a32283fa19.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/Fire Stick Clatter-004.ogg"
+dest_files=["res://.godot/imported/Fire Stick Clatter-004.ogg-4c84e2836855ea5a3fd0a5a32283fa19.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://pf17n6n02exo"
+path="res://.godot/imported/Stick Pick Up Clack.ogg-a911afea47da9da98ec95dc67594f7f0.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/Stick Pick Up Clack.ogg"
+dest_files=["res://.godot/imported/Stick Pick Up Clack.ogg-a911afea47da9da98ec95dc67594f7f0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

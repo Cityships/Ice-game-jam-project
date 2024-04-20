@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cer63gn7pfijd"
+path="res://.godot/imported/Fire Stick Land-004.ogg-be67902f8de940caa03ca4e21e28d914.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/Fire Stick Land-004.ogg"
+dest_files=["res://.godot/imported/Fire Stick Land-004.ogg-be67902f8de940caa03ca4e21e28d914.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

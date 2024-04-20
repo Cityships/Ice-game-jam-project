@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cr5m5yke12qvc"
+path="res://.godot/imported/Small Bat Flap 5.ogg-7f1b33072ada87c9fc4079d9bd0a697f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/Small Bat Flap 5.ogg"
+dest_files=["res://.godot/imported/Small Bat Flap 5.ogg-7f1b33072ada87c9fc4079d9bd0a697f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

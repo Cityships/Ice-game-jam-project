@@ -3,10 +3,20 @@ extends CharacterBody2D
 
 @export var speed: float = 100;
 @export var accel: float = 10;
+@onready var anim = $AnimationPlayer
+@onready var sprite = $Sprite2D
 
 func _physics_process(delta):
 	
 	var direction: Vector2 = Input.get_vector("left","right","up","down")
+	if direction.x < 0 && !sprite.flip_h:
+		sprite.flip_h = true
+	elif direction.x > 0 && sprite.flip_h:
+		sprite.flip_h = false;
+	if (!direction.is_zero_approx()):
+		anim.play("walking")
+	else:
+		anim.play("idle")
 	velocity.x = move_toward(velocity.x, speed * direction.x, accel)
 	velocity.y = move_toward(velocity.y, speed * direction.y, accel)
 	# Add the gravity.

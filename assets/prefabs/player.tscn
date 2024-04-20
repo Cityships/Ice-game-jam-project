@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://clrgpm7230fwn"]
+[gd_scene load_steps=11 format=3 uid="uid://clrgpm7230fwn"]
 
 [ext_resource type="Script" path="res://assets/scripts/playerscript.gd" id="1_sks3k"]
 [ext_resource type="Texture2D" uid="uid://ix5rvokcxgy" path="res://assets/art/yetispritesheet.png" id="2_mwim6"]
 [ext_resource type="Shader" path="res://assets/shaders/vignette.gdshader" id="3_j28ff"]
+[ext_resource type="Texture2D" uid="uid://cwn54o2sfeyns" path="res://assets/art/spot.png" id="4_6xj6y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4uw6"]
 
@@ -150,7 +151,7 @@ _data = {
 shader = ExtResource("3_j28ff")
 shader_parameter/color = null
 shader_parameter/multiplier = -0.1
-shader_parameter/softness = 0.6
+shader_parameter/softness = 1.0
 
 [node name="player" type="CharacterBody2D"]
 motion_mode = 1
@@ -175,6 +176,13 @@ zoom = Vector2(0.8, 0.8)
 libraries = {
 "": SubResource("AnimationLibrary_rtm1s")
 }
+
+[node name="shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.529412)
+z_index = -1
+position = Vector2(-22.9999, 104)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("4_6xj6y")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -228,4 +236,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.250215, 0.223893, 0.735281, 0.254902)
+color = Color(0.25098, 0.223529, 0.733333, 0.137255)

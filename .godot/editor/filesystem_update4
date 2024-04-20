@@ -6,3 +6,6 @@ res://assets/scenes/scene2.tscn
 res://assets/scenes/scene1.tscn
 res://assets/scenes/scene3.tscn
 res://assets/scripts/playerscript.gd
+res://assets/scripts/enemybigbat.gd
+res://assets/prefabs/big_bat_enemy.tscn
+res://assets/scripts/SmallBatEnemy.gd

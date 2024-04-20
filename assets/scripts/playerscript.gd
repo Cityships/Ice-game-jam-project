@@ -11,7 +11,7 @@ func _physics_process(delta):
 	var direction: Vector2 = Input.get_vector("left","right","up","down")
 	if direction.x < 0 && !sprite.flip_h:
 		sprite.flip_h = true
-		sprite.position.x = -40
+		sprite.position.x += -40
 	elif direction.x > 0 && sprite.flip_h:
 		sprite.flip_h = false;
 		sprite.position.x = 0

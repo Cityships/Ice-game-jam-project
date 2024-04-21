@@ -1,11 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://d2cf84ka4f236"]
+[gd_scene load_steps=14 format=3 uid="uid://d2cf84ka4f236"]
 
 [ext_resource type="PackedScene" uid="uid://clrgpm7230fwn" path="res://assets/prefabs/player.tscn" id="1_2w8ky"]
 [ext_resource type="TileSet" uid="uid://cejloqnpexojn" path="res://assets/prefabs/floortile.tres" id="2_g5ph3"]
 [ext_resource type="TileSet" uid="uid://dcigvdisyk286" path="res://assets/prefabs/walltile.tres" id="3_w8adm"]
 [ext_resource type="Script" path="res://assets/scripts/drawcollisionpolygon.gd" id="4_ixb01"]
-[ext_resource type="Texture2D" uid="uid://cqexeaiaeduhl" path="res://assets/engineering_art/triangle.png" id="4_mdlss"]
-[ext_resource type="PackedScene" uid="uid://c2oe1f313mrd5" path="res://assets/prefabs/big_bat_enemy.tscn" id="6_slvro"]
 [ext_resource type="PackedScene" uid="uid://bnlhisaaqbdug" path="res://assets/prefabs/campfire.tscn" id="7_ithq3"]
 [ext_resource type="Texture2D" uid="uid://chlrr8crai1ce" path="res://assets/art/particles/softglow2.png" id="8_51lwf"]
 [ext_resource type="PackedScene" uid="uid://d1q2xosnvigo2" path="res://assets/prefabs/stick.tscn" id="9_m5vm6"]
@@ -46,9 +44,6 @@ turbulence_enabled = true
 turbulence_noise_speed = Vector3(30, 0, 0)
 turbulence_influence_max = 0.165
 turbulence_initial_displacement_min = -14.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_oo5rt"]
-radius = 300.0
 
 [node name="root" type="Node2D"]
 
@@ -108,25 +103,6 @@ script = ExtResource("4_ixb01")
 
 [node name="Polygon2D" type="Polygon2D" parent="Map/map physics geometry/polygonal walls/CollisionPolygon2D3"]
 color = Color(0, 0, 0, 1)
-
-[node name="next level" type="Sprite2D" parent="Map"]
-modulate = Color(0, 0.898039, 0.313726, 1)
-position = Vector2(411, 1014)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_mdlss")
-
-[node name="ShapeCast2D" type="ShapeCast2D" parent="Map/next level"]
-position = Vector2(0, 100)
-shape = SubResource("CircleShape2D_oo5rt")
-target_position = Vector2(0, 0)
-
-[node name="spawn" type="Sprite2D" parent="Map"]
-modulate = Color(0.533333, 0.713726, 0.827451, 1)
-position = Vector2(-141, -39.9999)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_mdlss")
-
-[node name="BigBatEnemy" parent="." instance=ExtResource("6_slvro")]
 
 [node name="campfire" parent="." instance=ExtResource("7_ithq3")]
 

@@ -20,6 +20,14 @@ var summon_cooldown = 13
 @onready var hit_box = $Hitbox
 @onready var ice_cube = $icecube
 @onready var offset = Vector2(0, -200)
+@onready var ice_cube_preload = preload("res://assets/prefabs/icecube_prefab.tscn")
+var has_ice_cube = false
+
+func drop_ice():
+	ice_cube.visible = false
+	var icecube_clone = ice_cube_preload.instantiate() as RigidBody2D
+	icecube_clone.position = position
+	get_parent().add_child(icecube_clone)
 
 func channel_summon():
 	anim.speed_scale = 1
@@ -37,7 +45,10 @@ func _defeated():
 	self.queue_free()
 
 func _ready():
+	if is_summoner:
+		has_ice_cube = false
 	if !is_summoner:
+		has_ice_cube = true
 		ice_cube.visible = true
 		target_position = get_parent().get_node("campfire").position + offset
 	timer.timeout.connect(_on_timer_timeout)
@@ -70,8 +81,10 @@ func _physics_process(delta):
 	elif is_summoner:
 		direction = Vector2()
 
-	
-	
+	if has_ice_cube && !is_summoner && position.distance_to(target_position) <= 10:
+		drop_ice()
+		has_ice_cube = false
+		anim.play("flyaway")
 	
 	if direction.x < 0 && sprite.flip_h:
 		sprite.flip_h = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bnlhisaaqbdug"]
+[gd_scene load_steps=14 format=3 uid="uid://bnlhisaaqbdug"]
 
 [ext_resource type="Script" path="res://assets/scripts/campfire.gd" id="1_1ttha"]
 [ext_resource type="Texture2D" uid="uid://bqirkwxpwlj6r" path="res://assets/art/campfire.png" id="2_8sqjk"]
@@ -46,6 +46,8 @@ scale_min = 0.3
 scale_max = 1.2
 color_ramp = SubResource("GradientTexture1D_n476p")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xks4s"]
+
 [node name="campfire" type="Node2D"]
 position = Vector2(-136, 852)
 script = ExtResource("1_1ttha")
@@ -82,3 +84,9 @@ amount = 15
 process_material = SubResource("ParticleProcessMaterial_6nv3p")
 texture = ExtResource("4_6xl41")
 lifetime = 2.0
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+scale = Vector2(15, 6)
+shape = SubResource("RectangleShape2D_xks4s")
+target_position = Vector2(0, 0)
+collision_mask = 128

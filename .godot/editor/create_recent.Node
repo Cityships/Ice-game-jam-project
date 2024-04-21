@@ -1,11 +1,11 @@
-Sprite2D
-GPUParticles2D
 ShapeCast2D
+Sprite2D
 CollisionShape2D
+StaticBody2D
 RigidBody2D
+GPUParticles2D
 Node2D
 TextureRect
-StaticBody2D
 AnimationPlayer
 Timer
 RayCast2D

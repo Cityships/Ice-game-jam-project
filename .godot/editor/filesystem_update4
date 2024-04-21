@@ -10,3 +10,6 @@ res://assets/scenes/campfire.gd
 res://assets/scripts/stick.gd
 res://assets/scripts/playerscript.gd
 res://assets/prefabs/stick.tscn
+res://assets/prefabs/campfire.tscn
+res://assets/prefabs/icecube_prefab.tscn
+res://assets/scripts/campfire.gd

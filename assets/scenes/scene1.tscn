@@ -132,6 +132,9 @@ texture = ExtResource("4_mdlss")
 
 [node name="SmallBatEnemy" parent="." instance=ExtResource("10_dxewc")]
 position = Vector2(583, 925)
+is_summoner = false
 
 [node name="stick" parent="." instance=ExtResource("9_m5vm6")]
 position = Vector2(-268, 543)
+linear_velocity = Vector2(-100, -100)
+linear_damp = 30.0

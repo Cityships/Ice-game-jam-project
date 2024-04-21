@@ -7,7 +7,3 @@ res://assets/prefabs/small_bat_enemy.tscn
 res://assets/prefabs/stick.tscn
 res://assets/prefabs/campfire.tscn
 res://assets/prefabs/icecube_prefab.tscn
-res://assets/scripts/ProgressBar.gd
-res://assets/scripts/SmallBatEnemy.gd
-res://assets/autoload/GameManager.gd
-res://assets/scripts/campfire.gd

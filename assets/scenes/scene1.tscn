@@ -48,7 +48,6 @@ turbulence_initial_displacement_min = -14.0
 [node name="root" type="Node2D"]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-visible = false
 modulate = Color(0.731076, 0.837303, 0.892879, 1)
 z_index = 5
 position = Vector2(339, 409)
@@ -64,6 +63,7 @@ trail_sections = 10
 [node name="GameManager" type="Node2D" parent="."]
 
 [node name="player" parent="." instance=ExtResource("1_2w8ky")]
+position = Vector2(232, 590)
 
 [node name="Map" type="Node2D" parent="."]
 
@@ -124,5 +124,14 @@ position = Vector2(-590, 505)
 [node name="stick5" parent="." instance=ExtResource("9_m5vm6")]
 position = Vector2(-717, 640)
 
+[node name="SmallBatEnemy" parent="." instance=ExtResource("10_dxewc")]
+position = Vector2(963, 1380)
+
+[node name="SmallBatEnemy3" parent="." instance=ExtResource("10_dxewc")]
+position = Vector2(1740, 1340)
+
+[node name="SmallBatEnemy4" parent="." instance=ExtResource("10_dxewc")]
+position = Vector2(2299, 2232)
+
 [node name="SmallBatEnemy5" parent="." instance=ExtResource("10_dxewc")]
-position = Vector2(1563, 68)
+position = Vector2(3403, 1870)

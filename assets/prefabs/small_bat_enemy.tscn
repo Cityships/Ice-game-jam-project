@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://u2mbwcwcyqwu" path="res://assets/art/minibatspritesheet.png" id="2_t4ok3"]
 [ext_resource type="Texture2D" uid="uid://cwn54o2sfeyns" path="res://assets/art/spot.png" id="3_trxvu"]
 [ext_resource type="Texture2D" uid="uid://b7q5m6t2k7u0o" path="res://assets/art/icecube.png" id="4_unvnf"]
-[ext_resource type="AudioStream" path="res://assets/sound/Small Bat Flap 1.ogg" id="5_ynal4"]
-[ext_resource type="AudioStream" path="res://assets/sound/Small Bat Flap 2.ogg" id="6_mu6dp"]
-[ext_resource type="AudioStream" path="res://assets/sound/Small Bat Flap 3.ogg" id="7_t8yk3"]
-[ext_resource type="AudioStream" path="res://assets/sound/Small Bat Flap 4.ogg" id="8_uk6s3"]
-[ext_resource type="AudioStream" path="res://assets/sound/Small Bat Flap 5.ogg" id="9_nj0uu"]
+[ext_resource type="AudioStream" uid="uid://dwsj577oqw7f6" path="res://assets/sound/Small Bat Flap 1.ogg" id="5_ynal4"]
+[ext_resource type="AudioStream" uid="uid://bsf4dmpr4qwuk" path="res://assets/sound/Small Bat Flap 2.ogg" id="6_mu6dp"]
+[ext_resource type="AudioStream" uid="uid://dvnk1npdyekha" path="res://assets/sound/Small Bat Flap 3.ogg" id="7_t8yk3"]
+[ext_resource type="AudioStream" uid="uid://bgbg85qwdd4od" path="res://assets/sound/Small Bat Flap 4.ogg" id="8_uk6s3"]
+[ext_resource type="AudioStream" uid="uid://to1w1opj50au" path="res://assets/sound/Small Bat Flap 5.ogg" id="9_nj0uu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8wydk"]
 radius = 50.0

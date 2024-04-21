@@ -1,6 +1,6 @@
-AudioStreamPlayer2D
-AudioStreamPlayer
 AnimationPlayer
+AudioStreamPlayer
+AudioStreamPlayer2D
 StaticBody2D
 CollisionShape2D
 Area2D

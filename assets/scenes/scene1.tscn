@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d2cf84ka4f236"]
+[gd_scene load_steps=15 format=3 uid="uid://d2cf84ka4f236"]
 
 [ext_resource type="PackedScene" uid="uid://clrgpm7230fwn" path="res://assets/prefabs/player.tscn" id="1_2w8ky"]
 [ext_resource type="TileSet" uid="uid://cejloqnpexojn" path="res://assets/prefabs/floortile.tres" id="2_g5ph3"]
@@ -6,57 +6,21 @@
 [ext_resource type="Script" path="res://assets/scripts/drawcollisionpolygon.gd" id="4_ixb01"]
 [ext_resource type="Texture2D" uid="uid://cqexeaiaeduhl" path="res://assets/engineering_art/triangle.png" id="4_mdlss"]
 [ext_resource type="PackedScene" uid="uid://c2oe1f313mrd5" path="res://assets/prefabs/big_bat_enemy.tscn" id="6_slvro"]
-[ext_resource type="Texture2D" uid="uid://bqirkwxpwlj6r" path="res://assets/art/campfire.png" id="7_gnrtx"]
-[ext_resource type="Texture2D" uid="uid://chlrr8crai1ce" path="res://assets/art/particles/softglow2.png" id="8_51lwf"]
-[ext_resource type="Texture2D" uid="uid://b0s5n1nqnmigf" path="res://assets/art/particles/puff1.png" id="9_7oml4"]
+[ext_resource type="PackedScene" uid="uid://bnlhisaaqbdug" path="res://assets/prefabs/campfire.tscn" id="7_ithq3"]
+[ext_resource type="Texture2D" uid="uid://csj0o53u1oqti" path="res://assets/art/wood.png" id="7_mdoqa"]
+[ext_resource type="Script" path="res://assets/scripts/stick.gd" id="9_6onuy"]
+[ext_resource type="Texture2D" uid="uid://kasrbnwxkiw6" path="res://assets/art/stickglow.png" id="10_b166f"]
 [ext_resource type="PackedScene" uid="uid://fm1okurh8qdq" path="res://assets/prefabs/small_bat_enemy.tscn" id="10_dxewc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oo5rt"]
 radius = 300.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2epjk"]
-radius = 100.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_h07hn"]
+radius = 300.0
 
-[sub_resource type="Gradient" id="Gradient_vq8ja"]
-colors = PackedColorArray(1, 1, 1, 0.470588, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_dpdb5"]
-gradient = SubResource("Gradient_vq8ja")
-
-[sub_resource type="Curve" id="Curve_uu7ip"]
-_data = [Vector2(0, 0.567711), 0.0, 0.0, 0, 0, Vector2(1, 0.0414459), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_68h3w"]
-curve = SubResource("Curve_uu7ip")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4jnmg"]
-particle_flag_disable_z = true
-gravity = Vector3(0, -100, 0)
-scale_min = 1.5
-scale_max = 2.5
-scale_curve = SubResource("CurveTexture_68h3w")
-color_ramp = SubResource("GradientTexture1D_dpdb5")
-turbulence_noise_strength = 1.84
-
-[sub_resource type="Gradient" id="Gradient_83l0r"]
-colors = PackedColorArray(0.473976, 0.473976, 0.473976, 0.207843, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_n476p"]
-gradient = SubResource("Gradient_83l0r")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6nv3p"]
-particle_flag_disable_z = true
-emission_shape_offset = Vector3(0, -30, 0)
-inherit_velocity_ratio = 0.286
-direction = Vector3(0, -1, 0)
-spread = 11.305
-initial_velocity_min = 59.11
-initial_velocity_max = 206.9
-gravity = Vector3(0, -70, 0)
-scale_min = 0.3
-scale_max = 1.2
-color_ramp = SubResource("GradientTexture1D_n476p")
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_j4wbb"]
+a = Vector2(-125.726, -50.802)
+b = Vector2(127.274, 49.198)
 
 [node name="root" type="Node2D"]
 
@@ -120,42 +84,31 @@ texture = ExtResource("4_mdlss")
 
 [node name="BigBatEnemy" parent="." instance=ExtResource("6_slvro")]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(-136, 852)
-gravity_scale = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("CircleShape2D_2epjk")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-texture = ExtResource("7_gnrtx")
-
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="RigidBody2D"]
-modulate = Color(1, 0.219937, 0.0582709, 0.545098)
-z_index = 1
-position = Vector2(0, -51)
-process_material = SubResource("ParticleProcessMaterial_4jnmg")
-texture = ExtResource("8_51lwf")
-lifetime = 2.0
-trail_lifetime = 0.73
-trail_sections = 12
-trail_section_subdivisions = 6
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="RigidBody2D"]
-modulate = Color(0.960784, 0.517647, 0, 0.545098)
-z_index = 1
-position = Vector2(0, -51)
-process_material = SubResource("ParticleProcessMaterial_4jnmg")
-texture = ExtResource("8_51lwf")
-trail_enabled = true
-trail_lifetime = 0.73
-trail_sections = 12
-trail_section_subdivisions = 6
-
-[node name="GPUParticles2D3" type="GPUParticles2D" parent="RigidBody2D"]
-position = Vector2(0, -51)
-process_material = SubResource("ParticleProcessMaterial_6nv3p")
-texture = ExtResource("9_7oml4")
+[node name="campfire" parent="." instance=ExtResource("7_ithq3")]
 
 [node name="SmallBatEnemy" parent="." instance=ExtResource("10_dxewc")]
 position = Vector2(583, 925)
+
+[node name="stick" type="Node2D" parent="."]
+position = Vector2(-264.274, 544.802)
+script = ExtResource("9_6onuy")
+
+[node name="Sprite2D" type="Sprite2D" parent="stick"]
+z_index = 1
+texture = ExtResource("7_mdoqa")
+
+[node name="ItemGlow" type="Sprite2D" parent="stick"]
+modulate = Color(0.475308, 0.813957, 0.975563, 0.584314)
+texture = ExtResource("10_b166f")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="stick"]
+shape = SubResource("CircleShape2D_h07hn")
+target_position = Vector2(0, 0)
+collision_mask = 8
+
+[node name="StaticBody2D" type="StaticBody2D" parent="stick"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stick/StaticBody2D"]
+shape = SubResource("SegmentShape2D_j4wbb")

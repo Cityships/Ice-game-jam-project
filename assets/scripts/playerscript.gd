@@ -6,8 +6,24 @@ extends CharacterBody2D
 @onready var anim = $AnimationPlayer
 @onready var sprite = $Sprite2D
 
-func _physics_process(delta):
+@onready var held_item = $item/HeldItem
+@onready var held_item_glow = $item/HeldItemGlow
+@onready var shape_cast = $ItemDetection
+@onready var ItemAnim = $ItemAnimationPlayer
+var holding_item = false
 
+func _physics_process(delta):
+	
+	if shape_cast.is_colliding():
+		var obj = shape_cast.get_collider(0)
+		
+		if Input.is_action_just_pressed("interact") && !holding_item:
+			holding_item = true
+			obj.get_parent().queue_free()
+			held_item.visible = true
+			held_item_glow.visible = true
+			ItemAnim.play("HoldingStick")
+			
 	var direction: Vector2 = Input.get_vector("left","right","up","down")
 	if direction.x < 0 && !sprite.flip_h:
 		sprite.flip_h = true

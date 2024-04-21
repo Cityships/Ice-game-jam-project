@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Fire Layer 1.ogg-125138523716cc1f753a22417df7
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

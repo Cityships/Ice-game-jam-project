@@ -18,6 +18,7 @@ config/icon="res://assets/engineering_art/character1.png"
 [autoload]
 
 Levelnavigator="*res://assets/autoload/levelnavigator.gd"
+GameManager="*res://assets/autoload/GameManager.gd"
 
 [dotnet]
 

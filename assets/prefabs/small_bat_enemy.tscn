@@ -1,9 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://fm1okurh8qdq"]
+[gd_scene load_steps=19 format=3 uid="uid://fm1okurh8qdq"]
 
 [ext_resource type="Script" path="res://assets/scripts/SmallBatEnemy.gd" id="1_teli4"]
 [ext_resource type="Texture2D" uid="uid://u2mbwcwcyqwu" path="res://assets/art/minibatspritesheet.png" id="2_t4ok3"]
 [ext_resource type="Texture2D" uid="uid://cwn54o2sfeyns" path="res://assets/art/spot.png" id="3_trxvu"]
 [ext_resource type="Texture2D" uid="uid://b7q5m6t2k7u0o" path="res://assets/art/icecube.png" id="4_unvnf"]
+[ext_resource type="AudioStream" path="res://assets/sound/Small Bat Flap 1.ogg" id="5_ynal4"]
+[ext_resource type="AudioStream" path="res://assets/sound/Small Bat Flap 2.ogg" id="6_mu6dp"]
+[ext_resource type="AudioStream" path="res://assets/sound/Small Bat Flap 3.ogg" id="7_t8yk3"]
+[ext_resource type="AudioStream" path="res://assets/sound/Small Bat Flap 4.ogg" id="8_uk6s3"]
+[ext_resource type="AudioStream" path="res://assets/sound/Small Bat Flap 5.ogg" id="9_nj0uu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8wydk"]
 radius = 50.0
@@ -136,6 +141,44 @@ tracks/8/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0.529412), Color(0, 0, 0, 0)]
 }
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WingFlaps")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WingFlaps:pitch_scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.65),
+"transitions": PackedFloat32Array(1, 1e-05, 1),
+"update": 0,
+"values": [1.0, 0.5, 1.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("WingFlaps:volume_db")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.65),
+"transitions": PackedFloat32Array(1, 1e-05, 1),
+"update": 0,
+"values": [0.0, 6.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_4mubn"]
 resource_name = "idlemove"
@@ -200,6 +243,20 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WingFlaps")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.162255),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_25vv2"]
@@ -303,8 +360,22 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_iceoq"]
 radius = 104.73
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vbffr"]
+streams_count = 5
+stream_0/stream = ExtResource("5_ynal4")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("6_mu6dp")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("7_t8yk3")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("8_uk6s3")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("9_nj0uu")
+stream_4/weight = 1.0
+
 [node name="SmallBatEnemy" type="CharacterBody2D"]
 collision_layer = 0
+collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_teli4")
 is_summoner = false
@@ -313,7 +384,8 @@ is_summoner = false
 shape = SubResource("CircleShape2D_8wydk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(9, -58)
+position = Vector2(20, -100)
+rotation = 0.0698132
 scale = Vector2(1.13, 1.13)
 texture = ExtResource("2_t4ok3")
 hframes = 3
@@ -334,6 +406,7 @@ wait_time = 4.5
 one_shot = true
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+visible = false
 scale = Vector2(50, 50)
 shape = SubResource("CircleShape2D_115lo")
 target_position = Vector2(0, 0)
@@ -343,9 +416,19 @@ collision_mask = 8
 wait_time = 5.0
 
 [node name="Hitbox" type="ShapeCast2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_iceoq")
 target_position = Vector2(0, 0)
 collision_mask = 16
 
 [node name="icecube" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("4_unvnf")
+
+[node name="WingFlaps" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_vbffr")
+volume_db = 0.6
+pitch_scale = 0.95
+attenuation = 1.68179
+max_polyphony = 2
+panning_strength = 1.5

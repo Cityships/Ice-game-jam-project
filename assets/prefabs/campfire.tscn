@@ -1,9 +1,28 @@
-[gd_scene load_steps=14 format=3 uid="uid://bnlhisaaqbdug"]
+[gd_scene load_steps=39 format=3 uid="uid://bnlhisaaqbdug"]
 
 [ext_resource type="Script" path="res://assets/scripts/campfire.gd" id="1_1ttha"]
 [ext_resource type="Texture2D" uid="uid://bqirkwxpwlj6r" path="res://assets/art/campfire.png" id="2_8sqjk"]
 [ext_resource type="Texture2D" uid="uid://chlrr8crai1ce" path="res://assets/art/particles/softglow2.png" id="3_au1nh"]
 [ext_resource type="Texture2D" uid="uid://b0s5n1nqnmigf" path="res://assets/art/particles/puff1.png" id="4_6xl41"]
+[ext_resource type="AudioStream" uid="uid://cpbfxj8pkqjej" path="res://assets/sound/Fire Layer 1.ogg" id="5_ve8y5"]
+[ext_resource type="AudioStream" uid="uid://c4g1vugyekbpd" path="res://assets/sound/Fire Layer 3.wav" id="6_6hr86"]
+[ext_resource type="AudioStream" uid="uid://dkkh1ns4a5ded" path="res://assets/sound/Fire Layer 2.ogg" id="6_38qng"]
+[ext_resource type="AudioStream" uid="uid://dliu8xwsvcsj3" path="res://assets/sound/Fire Fizz 1.wav" id="8_v52dw"]
+[ext_resource type="AudioStream" uid="uid://dnxsjb3d37qxq" path="res://assets/sound/Fire Fizz 2.wav" id="9_ibbte"]
+[ext_resource type="AudioStream" uid="uid://sbcdi16j2scf" path="res://assets/sound/Fire Fizz 3.wav" id="10_b7gnl"]
+[ext_resource type="AudioStream" uid="uid://d3l058h5exuy" path="res://assets/sound/Fire Fizz 4.wav" id="11_g45vy"]
+[ext_resource type="AudioStream" path="res://assets/sound/Fire Spark-001.ogg" id="12_ragmv"]
+[ext_resource type="AudioStream" path="res://assets/sound/Fire Spark-002.ogg" id="13_0amwx"]
+[ext_resource type="AudioStream" path="res://assets/sound/Fire Spark-003.ogg" id="14_iuqgy"]
+[ext_resource type="AudioStream" path="res://assets/sound/Fire Spark-004.ogg" id="15_o33sn"]
+[ext_resource type="AudioStream" path="res://assets/sound/Fire Stick Clatter-001.ogg" id="16_icd8x"]
+[ext_resource type="AudioStream" path="res://assets/sound/Fire Stick Clatter-002.ogg" id="17_gbgfs"]
+[ext_resource type="AudioStream" path="res://assets/sound/Fire Stick Clatter-003.ogg" id="18_ml88f"]
+[ext_resource type="AudioStream" path="res://assets/sound/Fire Stick Clatter-004.ogg" id="19_yqjx4"]
+[ext_resource type="AudioStream" path="res://assets/sound/Fire Stick Land-001.ogg" id="20_4crfy"]
+[ext_resource type="AudioStream" path="res://assets/sound/Fire Stick Land-002.ogg" id="21_25vk5"]
+[ext_resource type="AudioStream" path="res://assets/sound/Fire Stick Land-003.ogg" id="22_a7q0k"]
+[ext_resource type="AudioStream" path="res://assets/sound/Fire Stick Land-004.ogg" id="23_p3ih5"]
 
 [sub_resource type="Gradient" id="Gradient_vq8ja"]
 colors = PackedColorArray(1, 1, 1, 0.470588, 1, 1, 1, 1)
@@ -48,10 +67,104 @@ color_ramp = SubResource("GradientTexture1D_n476p")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45ts2"]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_s3d81"]
+streams_count = 4
+stream_0/stream = ExtResource("8_v52dw")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("9_ibbte")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("10_b7gnl")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("11_g45vy")
+stream_3/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qpk8h"]
+streams_count = 4
+stream_0/stream = ExtResource("12_ragmv")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("13_0amwx")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("14_iuqgy")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("15_o33sn")
+stream_3/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_e7n8e"]
+streams_count = 4
+stream_0/stream = ExtResource("16_icd8x")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("17_gbgfs")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("18_ml88f")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("19_yqjx4")
+stream_3/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3blah"]
+streams_count = 4
+stream_0/stream = ExtResource("20_4crfy")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("21_25vk5")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("22_a7q0k")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("23_p3ih5")
+stream_3/weight = 1.0
+
+[sub_resource type="Animation" id="Animation_kg6m1"]
+resource_name = "FireStickAdd"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireStickLand")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FireStickClatter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FireSparks")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rg35u"]
+_data = {
+"FireStickAdd": SubResource("Animation_kg6m1")
+}
+
 [node name="campfire" type="Node2D"]
 position = Vector2(-136, 852)
 script = ExtResource("1_1ttha")
-fire_intensity = 2
+campfire_durability = 5.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_8sqjk")
@@ -85,10 +198,70 @@ process_material = SubResource("ParticleProcessMaterial_6nv3p")
 texture = ExtResource("4_6xl41")
 lifetime = 2.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="IceCheckArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IceCheckArea"]
+scale = Vector2(15, 6)
+shape = SubResource("RectangleShape2D_45ts2")
+
+[node name="StickCheckArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StickCheckArea"]
 scale = Vector2(15, 6)
 shape = SubResource("RectangleShape2D_45ts2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(15, 6)
+shape = SubResource("RectangleShape2D_45ts2")
+
+[node name="FireLoop1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ve8y5")
+autoplay = true
+attenuation = 2.54912
+panning_strength = 1.5
+
+[node name="FireLoop2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_38qng")
+autoplay = true
+attenuation = 0.812252
+panning_strength = 1.5
+
+[node name="FireLoop3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_6hr86")
+volume_db = 3.0
+autoplay = true
+attenuation = 2.54912
+panning_strength = 1.5
+
+[node name="FireFizz" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_s3d81")
+volume_db = 3.0
+panning_strength = 1.5
+
+[node name="FireSparks" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_qpk8h")
+volume_db = 6.0
+panning_strength = 2.0
+
+[node name="FireStickClatter" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_e7n8e")
+pitch_scale = 0.75
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="FireStickLand" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_3blah")
+volume_db = 3.0
+panning_strength = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rg35u")
+}

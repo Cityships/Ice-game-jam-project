@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnxsjb3d37qxq"
+path="res://.godot/imported/Fire Fizz 2.wav-a1ec0657bf1a6f74d4f61b97fd90dd54.sample"
+
+[deps]
+
+source_file="res://assets/sound/Fire Fizz 2.wav"
+dest_files=["res://.godot/imported/Fire Fizz 2.wav-a1ec0657bf1a6f74d4f61b97fd90dd54.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -378,8 +378,12 @@ collision_layer = 0
 collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_teli4")
+speed = null
+accel = null
+decel = null
 is_summoner = false
-max_summon_cooldown = 3
+scare_range = null
+max_summon_cooldown = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8wydk")

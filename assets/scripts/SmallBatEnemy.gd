@@ -22,7 +22,11 @@ var summon_cooldown = 13
 @onready var offset = Vector2(0, -200)
 @onready var ice_cube_preload = preload("res://assets/prefabs/icecube_prefab.tscn")
 var has_ice_cube = false
+signal summon_signal
+@onready var game_manager = get_parent()
 
+func make_summoner():
+	is_summoner = true
 func drop_ice():
 	ice_cube.visible = false
 	var icecube_clone = ice_cube_preload.instantiate() as RigidBody2D
@@ -37,6 +41,8 @@ func channel_summon():
 func _on_timer_timeout():
 	anim.speed_scale = 1
 	anim.play("screech")
+	summon_signal.emit()
+	summon_signal.emit()
 	channeling = false
 	var rng = RandomNumberGenerator.new()
 	summon_cooldown = max_summon_cooldown + rng.randf_range(-2,2)	#logic for summoning more bats
@@ -45,6 +51,8 @@ func _defeated():
 	self.queue_free()
 
 func _ready():
+	
+	summon_signal.connect(game_manager._on_summon_bats)
 	if is_summoner:
 		has_ice_cube = false
 		ice_cube.visible = false
@@ -73,14 +81,16 @@ func _physics_process(delta):
 	if hit_box.is_colliding():
 		var object = hit_box.get_collider(0) as RigidBody2D
 		if object != null && !(object.linear_velocity.is_zero_approx()):
+			has_ice_cube = false
 			anim.play("flyaway")
 	
 	if is_summoner && anim.current_animation != "screech" && !channeling && position.distance_to(target_position) > 500:	
-		if shape_cast.is_colliding() && !channeling && summon_cooldown < 0:
+		if !channeling && summon_cooldown < 0:
 			channeling = true
 			channel_summon()
 	elif is_summoner:
 		direction = Vector2()
+		
 
 	if has_ice_cube && !is_summoner && position.distance_to(target_position) <= 10:
 		drop_ice()

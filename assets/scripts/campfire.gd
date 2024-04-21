@@ -6,6 +6,8 @@ extends Node2D
 @export_range(0, 10, 1) var campfire_durability
 @onready var area = $IceCheckArea
 var particle_mat: ParticleProcessMaterial
+signal no_fire
+@onready var game_manager = get_parent()
 
 #func _on_campfire_damaged():
 	
@@ -28,6 +30,8 @@ func _update_fire_intensity(amount):
 		particle_mat.scale_max = 0
 		GPUParticleFire.lifetime = 0
 		print("campfire is out")
+		
+		emit_signal("no_fire")
 		pass
 	
 	#print("campfire.gd: campfire damaged!")
@@ -48,8 +52,11 @@ func _ready():
 	particle_mat.scale_max = fire_intensity+1
 	GPUParticleFire.lifetime = fire_intensity
 	
+	no_fire.connect(game_manager.on_no_fire)
 	
 func _physics_process(delta):
+	
+	
 	
 	if $IceCheckArea.has_overlapping_bodies():
 		_update_fire_intensity(-1)

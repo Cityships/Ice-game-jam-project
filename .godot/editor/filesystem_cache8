@@ -1,94 +1,98 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713700898
-README.md::TextFile::-1::1713499690::0::1::::<><>::
-::res://assets/::1713674834
-::res://assets/art/::1713689698
-campfire.png::CompressedTexture2D::3527008442505755563::1713680923::1713680923::1::::<><>::
-giantbatspreadsheet.png::CompressedTexture2D::6780145615559002944::1713674834::1713674834::1::::<><>::
-grass.png::CompressedTexture2D::1683620514461011205::1713674834::1713674834::1::::<><>::
-icecube.png::CompressedTexture2D::4667338322301486320::1713674834::1713674834::1::::<><>::
-minibatspritesheet.png::CompressedTexture2D::1460246621433890656::1713680923::1713674834::1::::<><>::
-spot.png::CompressedTexture2D::6345706913893253532::1713674834::1713674834::1::::<><>::
-stickglow.png::CompressedTexture2D::703011774383029099::1713689698::1713689698::1::::<><>::
-wood.png::CompressedTexture2D::6056364498490203742::1713674834::1713674834::1::::<><>::
-yetispritesheet.png::CompressedTexture2D::17966012670663664::1713674834::1713674834::1::::<><>::
-::res://assets/art/particles/::1713674834
-capsuleparticle.png::CompressedTexture2D::4740587075109395915::1713674834::1713674834::1::::<><>::
-puff1.png::CompressedTexture2D::4180146685755125601::1713674834::1713674834::1::::<><>::
-puff2.png::CompressedTexture2D::3933147407004551883::1713674834::1713674834::1::::<><>::
-softglow2.png::CompressedTexture2D::5287935712653409808::1713674834::1713674834::1::::<><>::
-::res://assets/autoload/::1713499690
-levelnavigator.gd::GDScript::-1::1713502481::0::1::::<>Node<>::
-::res://assets/engineering_art/::1713700899
-character1.png::CompressedTexture2D::6804709068330226000::1713499690::1713499690::1::::<><>::
-darksquare.png::CompressedTexture2D::4169648148407134067::1713499690::1713499690::1::::<><>::
-icon.svg::CompressedTexture2D::7710880151135148397::1713499690::1713700899::1::::<><>::
-lightsquare.png::CompressedTexture2D::410089622132794770::1713499690::1713499690::1::::<><>::
-triangle.png::CompressedTexture2D::5905524022984129569::1713499690::1713499690::1::::<><>::
-::res://assets/prefabs/::1713706457
-big_bat_enemy.tscn::PackedScene::6697131039873010728::1713689698::0::1::::<><>::res://assets/scripts/enemybigbat.gd<>uid://c3umai5rhuvnc::::res://assets/art/giantbatspreadsheet.png<>uid://cwn54o2sfeyns::::res://assets/art/spot.png
-campfire.tscn::PackedScene::3322024057024511426::1713706440::0::1::::<><>::res://assets/scripts/campfire.gd<>uid://bqirkwxpwlj6r::::res://assets/art/campfire.png<>uid://chlrr8crai1ce::::res://assets/art/particles/softglow2.png<>uid://b0s5n1nqnmigf::::res://assets/art/particles/puff1.png
-floortile.tres::TileSet::5072869890903826191::1713701705::0::1::::<><>::uid://f3wd7jvblv43::::res://assets/engineering_art/lightsquare.png
-icecube_prefab.tscn::PackedScene::1701640180762131985::1713706125::0::1::::<><>::uid://b7q5m6t2k7u0o::::res://assets/art/icecube.png
-player.tscn::PackedScene::5580404839067852789::1713706124::0::1::::<><>::res://assets/scripts/playerscript.gd<>uid://ix5rvokcxgy::::res://assets/art/yetispritesheet.png<>res://assets/shaders/vignette.gdshader<>uid://cwn54o2sfeyns::::res://assets/art/spot.png<>uid://chlrr8crai1ce::::res://assets/art/particles/softglow2.png<>uid://kasrbnwxkiw6::::res://assets/art/stickglow.png<>uid://csj0o53u1oqti::::res://assets/art/wood.png
-small_bat_enemy.tscn::PackedScene::377320951078137806::1713706457::0::1::::<><>::res://assets/scripts/SmallBatEnemy.gd<>uid://u2mbwcwcyqwu::::res://assets/art/minibatspritesheet.png<>uid://cwn54o2sfeyns::::res://assets/art/spot.png<>uid://b7q5m6t2k7u0o::::res://assets/art/icecube.png
-stick.tscn::PackedScene::9018883225550035647::1713706125::0::1::::<><>::res://assets/scripts/stick.gd<>uid://csj0o53u1oqti::::res://assets/art/wood.png<>uid://kasrbnwxkiw6::::res://assets/art/stickglow.png
-walltile.tres::TileSet::7316556734795268605::1713703656::0::1::::<><>::uid://b0n2q4fmfe30b::::res://assets/engineering_art/darksquare.png
-::res://assets/scenes/::1713706124
-scene1.tscn::PackedScene::9058853639641171771::1713706124::0::1::::<><>::uid://clrgpm7230fwn::::res://assets/prefabs/player.tscn<>uid://cejloqnpexojn::::res://assets/prefabs/floortile.tres<>uid://dcigvdisyk286::::res://assets/prefabs/walltile.tres<>res://assets/scripts/drawcollisionpolygon.gd<>uid://bnlhisaaqbdug::::res://assets/prefabs/campfire.tscn<>uid://chlrr8crai1ce::::res://assets/art/particles/softglow2.png<>uid://d1q2xosnvigo2::::res://assets/prefabs/stick.tscn<>uid://fm1okurh8qdq::::res://assets/prefabs/small_bat_enemy.tscn
-scene2.tscn::PackedScene::2631857507364088632::1713686769::0::1::::<><>::uid://clrgpm7230fwn::::res://assets/prefabs/player.tscn<>uid://f3wd7jvblv43::::res://assets/engineering_art/lightsquare.png<>uid://b0n2q4fmfe30b::::res://assets/engineering_art/darksquare.png<>uid://cqexeaiaeduhl::::res://assets/engineering_art/triangle.png<>res://assets/scripts/drawcollisionpolygon.gd<>uid://csj0o53u1oqti::::res://assets/art/wood.png<>uid://cwn54o2sfeyns::::res://assets/art/spot.png
-scene3.tscn::PackedScene::7152211610265675683::1713686769::0::1::::<><>::uid://clrgpm7230fwn::::res://assets/prefabs/player.tscn<>uid://f3wd7jvblv43::::res://assets/engineering_art/lightsquare.png<>uid://b0n2q4fmfe30b::::res://assets/engineering_art/darksquare.png<>res://assets/scripts/drawcollisionpolygon.gd
-::res://assets/scripts/::1713706123
-campfire.gd::GDScript::-1::1713706123::0::1::::<>Node2D<>::
-drawcollisionpolygon.gd::GDScript::-1::1713499690::0::1::::<>CollisionPolygon2D<>::
-enemybigbat.gd::GDScript::-1::1713674834::0::1::::<>CharacterBody2D<>::
-playerscript.gd::GDScript::-1::1713689698::0::1::::<>CharacterBody2D<>::
-SmallBatEnemy.gd::GDScript::-1::1713689698::0::1::::<>CharacterBody2D<>::
-stick.gd::GDScript::-1::1713689698::0::1::::<>Node2D<>::
-::res://assets/shaders/::1713706457
-vignette.gdshader::Shader::-1::1713706457::0::1::::<><>::
-::res://assets/sound/::1713707772
-Fire Fizz 1.wav::AudioStreamWAV::7949128867053079350::1713688534::1713707772::1::::<><>::
-Fire Fizz 2.wav::AudioStreamWAV::8120306780684913918::1713688551::1713707772::1::::<><>::
-Fire Fizz 3.wav::AudioStreamWAV::1265590816379213529::1713688564::1713707772::1::::<><>::
-Fire Fizz 4.wav::AudioStreamWAV::269083266833196988::1713688574::1713707772::1::::<><>::
-Fire Layer 1.ogg::AudioStreamOggVorbis::5828083582318623733::1713613024::1713707929::1::::<><>::
-Fire Layer 2.ogg::AudioStreamOggVorbis::7882266426519958695::1713613029::1713707932::1::::<><>::
-Fire Layer 3.wav::AudioStreamWAV::6822321303729450389::1713613037::1713707941::1::::<><>::
-Fire Spark-001.ogg::AudioStreamOggVorbis::-1::1713628682::1713680923::1::::<><>::
-Fire Spark-002.ogg::AudioStreamOggVorbis::-1::1713628682::1713680923::1::::<><>::
-Fire Spark-003.ogg::AudioStreamOggVorbis::-1::1713628682::1713680923::1::::<><>::
-Fire Spark-004.ogg::AudioStreamOggVorbis::-1::1713628682::1713680923::1::::<><>::
-Fire Stick Clatter-001.ogg::AudioStreamOggVorbis::-1::1713628682::1713680923::1::::<><>::
-Fire Stick Clatter-002.ogg::AudioStreamOggVorbis::-1::1713628682::1713680923::1::::<><>::
-Fire Stick Clatter-003.ogg::AudioStreamOggVorbis::-1::1713628682::1713680923::1::::<><>::
-Fire Stick Clatter-004.ogg::AudioStreamOggVorbis::-1::1713628683::1713680923::1::::<><>::
-Fire Stick Land-001.ogg::AudioStreamOggVorbis::-1::1713628682::1713680923::1::::<><>::
-Fire Stick Land-002.ogg::AudioStreamOggVorbis::-1::1713628682::1713680923::1::::<><>::
-Fire Stick Land-003.ogg::AudioStreamOggVorbis::-1::1713628682::1713680923::1::::<><>::
-Fire Stick Land-004.ogg::AudioStreamOggVorbis::-1::1713628682::1713680923::1::::<><>::
-Footstep-001.ogg::AudioStreamOggVorbis::-1::1713612988::1713680923::1::::<><>::
-Footstep-002.ogg::AudioStreamOggVorbis::-1::1713612988::1713680923::1::::<><>::
-Footstep-003.ogg::AudioStreamOggVorbis::-1::1713612988::1713680923::1::::<><>::
-Footstep-004.ogg::AudioStreamOggVorbis::-1::1713612988::1713680923::1::::<><>::
-Footstep-005.ogg::AudioStreamOggVorbis::-1::1713612988::1713680923::1::::<><>::
-Ice Drop-001.wav::AudioStreamWAV::6960246354850673343::1713689568::1713707772::1::::<><>::
-Ice Drop-002.wav::AudioStreamWAV::7467039284591915375::1713689568::1713707772::1::::<><>::
-Ice Drop-003.wav::AudioStreamWAV::6650249465597574858::1713689568::1713707772::1::::<><>::
-Ice Drop-004.wav::AudioStreamWAV::8549341933307739733::1713689568::1713707772::1::::<><>::
-Small Bat Flap 1.ogg::AudioStreamOggVorbis::-1::1713613698::1713680923::1::::<><>::
-Small Bat Flap 2.ogg::AudioStreamOggVorbis::-1::1713613821::1713680923::1::::<><>::
-Small Bat Flap 3.ogg::AudioStreamOggVorbis::-1::1713613744::1713680923::1::::<><>::
-Small Bat Flap 4.ogg::AudioStreamOggVorbis::-1::1713613758::1713680923::1::::<><>::
-Small Bat Flap 5.ogg::AudioStreamOggVorbis::-1::1713613773::1713680923::1::::<><>::
-Small Bat Quick Flapping.ogg::AudioStreamOggVorbis::-1::1713612872::1713680923::1::::<><>::
-Stick Pick Up 1.ogg::AudioStreamOggVorbis::-1::1713618646::1713680923::1::::<><>::
-Stick Pick Up 2.ogg::AudioStreamOggVorbis::-1::1713618691::1713680923::1::::<><>::
-Stick Pick Up 3.ogg::AudioStreamOggVorbis::-1::1713618713::1713680923::1::::<><>::
-Stick Pick Up Clack.ogg::AudioStreamOggVorbis::-1::1713628516::1713680923::1::::<><>::
-Stick Pick Up Rev-001.ogg::AudioStreamOggVorbis::-1::1713628540::1713680923::1::::<><>::
-Stick Pick Up Rev-002.ogg::AudioStreamOggVorbis::-1::1713628540::1713680923::1::::<><>::
-Stick Pick Up Rev-003.ogg::AudioStreamOggVorbis::-1::1713628540::1713680923::1::::<><>::
-Throw 1.ogg::AudioStreamOggVorbis::-1::1713619693::1713680925::1::::<><>::
-Throw 2.ogg::AudioStreamOggVorbis::-1::1713619712::1713680925::1::::<><>::
-Throw 3.ogg::AudioStreamOggVorbis::-1::1713619724::1713680925::1::::<><>::
+::res://::1713723092
+README.md::TextFile::-1::1713495660::0::1::::<><>::
+::res://assets/::1713647396
+::res://assets/art/::1713724562
+campfire.png::CompressedTexture2D::3527008442505755563::1713713312::1713713312::1::::<><>::
+daybar.png::CompressedTexture2D::7582829275363509146::1713724562::1713724562::1::::<><>::
+framebar.png::CompressedTexture2D::5893831094549883589::1713724562::1713724562::1::::<><>::
+giantbatspreadsheet.png::CompressedTexture2D::6780145615559002944::1713647396::1713647396::1::::<><>::
+grass.png::CompressedTexture2D::1683620514461011205::1713647396::1713647396::1::::<><>::
+icecube.png::CompressedTexture2D::4667338322301486320::1713647396::1713647396::1::::<><>::
+minibatspritesheet.png::CompressedTexture2D::1460246621433890656::1713713312::1713647396::1::::<><>::
+nightbar.png::CompressedTexture2D::1118951074428448551::1713724562::1713724562::1::::<><>::
+spot.png::CompressedTexture2D::6345706913893253532::1713647396::1713647396::1::::<><>::
+stickglow.png::CompressedTexture2D::703011774383029099::1713716207::1713716207::1::::<><>::
+wood.png::CompressedTexture2D::6056364498490203742::1713647396::1713647396::1::::<><>::
+yetispritesheet.png::CompressedTexture2D::17966012670663664::1713647396::1713647396::1::::<><>::
+::res://assets/art/particles/::1713658453
+capsuleparticle.png::CompressedTexture2D::4740587075109395915::1713647396::1713647396::1::::<><>::
+puff1.png::CompressedTexture2D::4180146685755125601::1713647396::1713647396::1::::<><>::
+puff2.png::CompressedTexture2D::3933147407004551883::1713647396::1713647396::1::::<><>::
+softglow2.png::CompressedTexture2D::5287935712653409808::1713647396::1713647396::1::::<><>::
+::res://assets/autoload/::1713716236
+GameManager.gd::GDScript::-1::1713716236::0::1::::<>Node<>::
+levelnavigator.gd::GDScript::-1::1713472695::0::1::::<>Node<>::
+::res://assets/engineering_art/::1713723094
+character1.png::CompressedTexture2D::6804709068330226000::1713469721::1713469721::1::::<><>::
+darksquare.png::CompressedTexture2D::4169648148407134067::1713463525::1713463541::1::::<><>::
+icon.svg::CompressedTexture2D::7710880151135148397::1713462361::1713723094::1::::<><>::
+lightsquare.png::CompressedTexture2D::410089622132794770::1713463525::1713463541::1::::<><>::
+triangle.png::CompressedTexture2D::5905524022984129569::1713471187::1713471189::1::::<><>::
+::res://assets/prefabs/::1713724391
+big_bat_enemy.tscn::PackedScene::6697131039873010728::1713716207::0::1::::<><>::res://assets/scripts/enemybigbat.gd<>uid://c3umai5rhuvnc::::res://assets/art/giantbatspreadsheet.png<>uid://cwn54o2sfeyns::::res://assets/art/spot.png
+campfire.tscn::PackedScene::3322024057024511426::1713723143::0::1::::<><>::res://assets/scripts/campfire.gd<>uid://bqirkwxpwlj6r::::res://assets/art/campfire.png<>uid://chlrr8crai1ce::::res://assets/art/particles/softglow2.png<>uid://b0s5n1nqnmigf::::res://assets/art/particles/puff1.png<>uid://cpbfxj8pkqjej::::res://assets/sound/Fire Layer 1.ogg<>uid://c4g1vugyekbpd::::res://assets/sound/Fire Layer 3.wav<>uid://dkkh1ns4a5ded::::res://assets/sound/Fire Layer 2.ogg<>uid://dliu8xwsvcsj3::::res://assets/sound/Fire Fizz 1.wav<>uid://dnxsjb3d37qxq::::res://assets/sound/Fire Fizz 2.wav<>uid://sbcdi16j2scf::::res://assets/sound/Fire Fizz 3.wav<>uid://d3l058h5exuy::::res://assets/sound/Fire Fizz 4.wav<>uid://c21g6cw8376k0::::res://assets/sound/Fire Spark-001.ogg<>uid://dje0qagi158oh::::res://assets/sound/Fire Spark-002.ogg<>uid://cu4eslinrgsuo::::res://assets/sound/Fire Spark-003.ogg<>uid://biaaubo0jmgwt::::res://assets/sound/Fire Spark-004.ogg<>uid://i8fs706qonhf::::res://assets/sound/Fire Stick Clatter-001.ogg<>uid://c73gmjic8ovmc::::res://assets/sound/Fire Stick Clatter-002.ogg<>uid://83tonhe0ib7w::::res://assets/sound/Fire Stick Clatter-003.ogg<>uid://c25x5nlgsimmk::::res://assets/sound/Fire Stick Clatter-004.ogg<>uid://c3gqv865v4q6k::::res://assets/sound/Fire Stick Land-001.ogg<>uid://dao1rjj1urbyj::::res://assets/sound/Fire Stick Land-002.ogg<>uid://bo7nvasevwb7c::::res://assets/sound/Fire Stick Land-003.ogg<>uid://clc4ksrpcv4dl::::res://assets/sound/Fire Stick Land-004.ogg
+floortile.tres::TileSet::5072869890903826191::1713723129::0::1::::<><>::uid://f3wd7jvblv43::::res://assets/engineering_art/lightsquare.png
+icecube_prefab.tscn::PackedScene::1701640180762131985::1713723143::0::1::::<><>::uid://b7q5m6t2k7u0o::::res://assets/art/icecube.png
+player.tscn::PackedScene::5580404839067852789::1713723700::0::1::::<><>::res://assets/scripts/playerscript.gd<>uid://ix5rvokcxgy::::res://assets/art/yetispritesheet.png<>res://assets/shaders/vignette.gdshader<>uid://cwn54o2sfeyns::::res://assets/art/spot.png<>uid://chlrr8crai1ce::::res://assets/art/particles/softglow2.png<>uid://b0n2q4fmfe30b::::res://assets/engineering_art/darksquare.png<>uid://f3wd7jvblv43::::res://assets/engineering_art/lightsquare.png<>uid://kasrbnwxkiw6::::res://assets/art/stickglow.png<>uid://csj0o53u1oqti::::res://assets/art/wood.png<>uid://cn7756kcs2go0::::res://assets/sound/Footstep-001.ogg<>uid://d0p0bau30oyk6::::res://assets/sound/Footstep-002.ogg<>uid://cdwcpf6sa3bah::::res://assets/sound/Footstep-003.ogg<>uid://8mh7v6k0ev1q::::res://assets/sound/Footstep-004.ogg<>uid://dcdef8tplesi4::::res://assets/sound/Footstep-005.ogg
+small_bat_enemy.tscn::PackedScene::377320951078137806::1713723143::0::1::::<><>::res://assets/scripts/SmallBatEnemy.gd<>uid://u2mbwcwcyqwu::::res://assets/art/minibatspritesheet.png<>uid://cwn54o2sfeyns::::res://assets/art/spot.png<>uid://b7q5m6t2k7u0o::::res://assets/art/icecube.png<>uid://dwsj577oqw7f6::::res://assets/sound/Small Bat Flap 1.ogg<>uid://bsf4dmpr4qwuk::::res://assets/sound/Small Bat Flap 2.ogg<>uid://dvnk1npdyekha::::res://assets/sound/Small Bat Flap 3.ogg<>uid://bgbg85qwdd4od::::res://assets/sound/Small Bat Flap 4.ogg<>uid://to1w1opj50au::::res://assets/sound/Small Bat Flap 5.ogg
+stick.tscn::PackedScene::9018883225550035647::1713723143::0::1::::<><>::res://assets/scripts/stick.gd<>uid://csj0o53u1oqti::::res://assets/art/wood.png<>uid://kasrbnwxkiw6::::res://assets/art/stickglow.png
+walltile.tres::TileSet::7316556734795268605::1713722823::0::1::::<><>::uid://b0n2q4fmfe30b::::res://assets/engineering_art/darksquare.png
+::res://assets/scenes/::1713724390
+scene1.tscn::PackedScene::9058853639641171771::1713723143::0::1::::<><>::uid://clrgpm7230fwn::::res://assets/prefabs/player.tscn<>uid://cejloqnpexojn::::res://assets/prefabs/floortile.tres<>uid://dcigvdisyk286::::res://assets/prefabs/walltile.tres<>res://assets/scripts/drawcollisionpolygon.gd<>uid://bnlhisaaqbdug::::res://assets/prefabs/campfire.tscn<>uid://chlrr8crai1ce::::res://assets/art/particles/softglow2.png<>uid://d1q2xosnvigo2::::res://assets/prefabs/stick.tscn<>uid://fm1okurh8qdq::::res://assets/prefabs/small_bat_enemy.tscn
+scene2.tscn::PackedScene::2631857507364088632::1713647396::0::1::::<><>::uid://clrgpm7230fwn::::res://assets/prefabs/player.tscn<>uid://f3wd7jvblv43::::res://assets/engineering_art/lightsquare.png<>uid://b0n2q4fmfe30b::::res://assets/engineering_art/darksquare.png<>uid://cqexeaiaeduhl::::res://assets/engineering_art/triangle.png<>res://assets/scripts/drawcollisionpolygon.gd<>uid://csj0o53u1oqti::::res://assets/art/wood.png<>uid://cwn54o2sfeyns::::res://assets/art/spot.png
+scene3.tscn::PackedScene::7152211610265675683::1713587912::0::1::::<><>::uid://clrgpm7230fwn::::res://assets/prefabs/player.tscn<>uid://f3wd7jvblv43::::res://assets/engineering_art/lightsquare.png<>uid://b0n2q4fmfe30b::::res://assets/engineering_art/darksquare.png<>res://assets/scripts/drawcollisionpolygon.gd
+::res://assets/scripts/::1713716236
+campfire.gd::GDScript::-1::1713716236::0::1::::<>Node2D<>::
+drawcollisionpolygon.gd::GDScript::-1::1713488692::0::1::::<>CollisionPolygon2D<>::
+enemybigbat.gd::GDScript::-1::1713647396::0::1::::<>CharacterBody2D<>::
+playerscript.gd::GDScript::-1::1713716207::0::1::::<>CharacterBody2D<>::
+SmallBatEnemy.gd::GDScript::-1::1713716207::0::1::::<>CharacterBody2D<>::
+stick.gd::GDScript::-1::1713716207::0::1::::<>Node2D<>::
+::res://assets/shaders/::1713723700
+vignette.gdshader::Shader::-1::1713723700::0::1::::<><>::
+::res://assets/sound/::1713716236
+Fire Fizz 1.wav::AudioStreamWAV::7949128867053079350::1713716236::1713716236::1::::<><>::
+Fire Fizz 2.wav::AudioStreamWAV::8120306780684913918::1713716236::1713716236::1::::<><>::
+Fire Fizz 3.wav::AudioStreamWAV::1265590816379213529::1713716236::1713716236::1::::<><>::
+Fire Fizz 4.wav::AudioStreamWAV::269083266833196988::1713716236::1713716236::1::::<><>::
+Fire Layer 1.ogg::AudioStreamOggVorbis::5828083582318623733::1713716236::1713716236::1::::<><>::
+Fire Layer 2.ogg::AudioStreamOggVorbis::7882266426519958695::1713716236::1713716236::1::::<><>::
+Fire Layer 3.wav::AudioStreamWAV::6822321303729450389::1713716236::1713716236::1::::<><>::
+Fire Spark-001.ogg::AudioStreamOggVorbis::6722033769356758985::1713716236::1713714265::1::::<><>::
+Fire Spark-002.ogg::AudioStreamOggVorbis::7800765662027746039::1713716236::1713714265::1::::<><>::
+Fire Spark-003.ogg::AudioStreamOggVorbis::6236760798004859742::1713716236::1713714265::1::::<><>::
+Fire Spark-004.ogg::AudioStreamOggVorbis::2947967223974461991::1713716236::1713714265::1::::<><>::
+Fire Stick Clatter-001.ogg::AudioStreamOggVorbis::629972665040112183::1713716236::1713714265::1::::<><>::
+Fire Stick Clatter-002.ogg::AudioStreamOggVorbis::7077073157604501166::1713716236::1713714265::1::::<><>::
+Fire Stick Clatter-003.ogg::AudioStreamOggVorbis::2375213734978623338::1713716236::1713714265::1::::<><>::
+Fire Stick Clatter-004.ogg::AudioStreamOggVorbis::6731322242979041074::1713716236::1713714265::1::::<><>::
+Fire Stick Land-001.ogg::AudioStreamOggVorbis::6751526011883510560::1713716236::1713714265::1::::<><>::
+Fire Stick Land-002.ogg::AudioStreamOggVorbis::7189772827766560261::1713716236::1713714265::1::::<><>::
+Fire Stick Land-003.ogg::AudioStreamOggVorbis::3435951433350585286::1713716236::1713714265::1::::<><>::
+Fire Stick Land-004.ogg::AudioStreamOggVorbis::5550827026008995021::1713716236::1713714265::1::::<><>::
+Footstep-001.ogg::AudioStreamOggVorbis::5753354584184101829::1713716236::1713714265::1::::<><>::
+Footstep-002.ogg::AudioStreamOggVorbis::8946468551156342867::1713716236::1713714265::1::::<><>::
+Footstep-003.ogg::AudioStreamOggVorbis::5028972741108347627::1713716236::1713714265::1::::<><>::
+Footstep-004.ogg::AudioStreamOggVorbis::2341487688825342856::1713716236::1713714265::1::::<><>::
+Footstep-005.ogg::AudioStreamOggVorbis::7306086431876385637::1713716236::1713714265::1::::<><>::
+Ice Drop-001.wav::AudioStreamWAV::6960246354850673343::1713716236::1713716236::1::::<><>::
+Ice Drop-002.wav::AudioStreamWAV::7467039284591915375::1713716236::1713716236::1::::<><>::
+Ice Drop-003.wav::AudioStreamWAV::6650249465597574858::1713716236::1713716236::1::::<><>::
+Ice Drop-004.wav::AudioStreamWAV::8549341933307739733::1713716236::1713716236::1::::<><>::
+Small Bat Flap 1.ogg::AudioStreamOggVorbis::8741177168280461753::1713716236::1713714265::1::::<><>::
+Small Bat Flap 2.ogg::AudioStreamOggVorbis::3661908562384003898::1713716236::1713714265::1::::<><>::
+Small Bat Flap 3.ogg::AudioStreamOggVorbis::8660718984994117718::1713716236::1713714265::1::::<><>::
+Small Bat Flap 4.ogg::AudioStreamOggVorbis::2810042957851930715::1713716236::1713714265::1::::<><>::
+Small Bat Flap 5.ogg::AudioStreamOggVorbis::1364108634886419928::1713716236::1713714265::1::::<><>::
+Small Bat Quick Flapping.ogg::AudioStreamOggVorbis::173744025457796452::1713716236::1713714265::1::::<><>::
+Stick Pick Up 1.ogg::AudioStreamOggVorbis::1803807816287316353::1713716236::1713714265::1::::<><>::
+Stick Pick Up 2.ogg::AudioStreamOggVorbis::2114016275590339883::1713716236::1713714265::1::::<><>::
+Stick Pick Up 3.ogg::AudioStreamOggVorbis::918287037009728131::1713716236::1713714265::1::::<><>::
+Stick Pick Up Clack.ogg::AudioStreamOggVorbis::5478058703124839570::1713716236::1713714265::1::::<><>::
+Stick Pick Up Rev-001.ogg::AudioStreamOggVorbis::3660383066219947005::1713716236::1713714265::1::::<><>::
+Stick Pick Up Rev-002.ogg::AudioStreamOggVorbis::3017613267373249288::1713716236::1713714265::1::::<><>::
+Stick Pick Up Rev-003.ogg::AudioStreamOggVorbis::846500895250056222::1713716236::1713714265::1::::<><>::
+Throw 1.ogg::AudioStreamOggVorbis::5401024730519611725::1713716236::1713714265::1::::<><>::
+Throw 2.ogg::AudioStreamOggVorbis::7644285104423843142::1713716236::1713714265::1::::<><>::
+Throw 3.ogg::AudioStreamOggVorbis::6223986770676816529::1713716236::1713714265::1::::<><>::

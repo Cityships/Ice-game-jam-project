@@ -329,27 +329,6 @@ texture = ExtResource("4_6xj6y")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GameOverText" type="RichTextLabel" parent="CanvasLayer"]
-visible = false
-modulate = Color(0.891541, 0, 0.137316, 1)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -277.0
-offset_top = -20.0
-offset_right = -190.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(7.41269, 7.41269)
-size_flags_horizontal = 4
-text = "Game Over"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
 [node name="canvas light" type="TextureRect" parent="CanvasLayer"]
 visible = false
 modulate = Color(1, 1, 1, 0.113725)

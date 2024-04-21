@@ -105,10 +105,10 @@ script = ExtResource("4_ixb01")
 color = Color(0, 0, 0, 1)
 
 [node name="campfire" parent="." instance=ExtResource("7_ithq3")]
+fire_intensity = 3
 
 [node name="SmallBatEnemy" parent="." instance=ExtResource("10_dxewc")]
 position = Vector2(583, 925)
-is_summoner = false
 
 [node name="stick" parent="." instance=ExtResource("9_m5vm6")]
 position = Vector2(-268, 543)

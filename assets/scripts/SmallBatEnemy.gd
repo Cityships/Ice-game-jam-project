@@ -47,6 +47,7 @@ func _defeated():
 func _ready():
 	if is_summoner:
 		has_ice_cube = false
+		ice_cube.visible = false
 	if !is_summoner:
 		has_ice_cube = true
 		ice_cube.visible = true

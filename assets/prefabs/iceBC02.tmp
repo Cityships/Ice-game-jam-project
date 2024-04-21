@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://yij1asa0olg0"]
+[gd_scene load_steps=5 format=3 uid="uid://yij1asa0olg0"]
 
 [ext_resource type="Texture2D" uid="uid://b7q5m6t2k7u0o" path="res://assets/art/icecube.png" id="1_8sopd"]
+[ext_resource type="Script" path="res://assets/prefabs/icecube.gd" id="1_umhg2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpn7y"]
 
@@ -8,8 +9,9 @@
 
 [node name="icecube" type="RigidBody2D"]
 position = Vector2(-14, 67)
-collision_layer = 16
+collision_layer = 0
 collision_mask = 0
+script = ExtResource("1_umhg2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(5, 5)

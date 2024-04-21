@@ -307,6 +307,7 @@ radius = 104.73
 collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_teli4")
+is_summoner = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8wydk")

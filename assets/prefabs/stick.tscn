@@ -17,6 +17,7 @@ b = Vector2(127.274, 49.198)
 [node name="stick" type="RigidBody2D"]
 collision_layer = 16
 gravity_scale = 0.0
+linear_damp = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 0.349066

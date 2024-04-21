@@ -1,16 +1,5 @@
+res://assets/scenes/scene1.tscn
 res://assets/prefabs/player.tscn
 res://assets/shaders/vignette.gdshader
 res://assets/prefabs/floortile.tres
 res://assets/prefabs/walltile.tres
-res://assets/scenes/scene1.tscn
-res://assets/prefabs/small_bat_enemy.tscn
-res://assets/prefabs/big_bat_enemy.tscn
-res://assets/scripts/SmallBatEnemy.gd
-res://assets/scenes/campfire.gd
-res://assets/scripts/stick.gd
-res://assets/scripts/playerscript.gd
-res://assets/prefabs/stick.tscn
-res://assets/prefabs/campfire.tscn
-res://assets/prefabs/icecube_prefab.tscn
-res://assets/scripts/campfire.gd
-res://assets/prefabs/icecube.gd

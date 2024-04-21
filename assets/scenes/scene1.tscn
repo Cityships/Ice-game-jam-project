@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2cf84ka4f236"]
+[gd_scene load_steps=17 format=3 uid="uid://d2cf84ka4f236"]
 
 [ext_resource type="PackedScene" uid="uid://clrgpm7230fwn" path="res://assets/prefabs/player.tscn" id="1_2w8ky"]
 [ext_resource type="TileSet" uid="uid://cejloqnpexojn" path="res://assets/prefabs/floortile.tres" id="2_g5ph3"]
@@ -7,22 +7,66 @@
 [ext_resource type="Texture2D" uid="uid://cqexeaiaeduhl" path="res://assets/engineering_art/triangle.png" id="4_mdlss"]
 [ext_resource type="PackedScene" uid="uid://c2oe1f313mrd5" path="res://assets/prefabs/big_bat_enemy.tscn" id="6_slvro"]
 [ext_resource type="PackedScene" uid="uid://bnlhisaaqbdug" path="res://assets/prefabs/campfire.tscn" id="7_ithq3"]
-[ext_resource type="Texture2D" uid="uid://csj0o53u1oqti" path="res://assets/art/wood.png" id="7_mdoqa"]
-[ext_resource type="Script" path="res://assets/scripts/stick.gd" id="9_6onuy"]
-[ext_resource type="Texture2D" uid="uid://kasrbnwxkiw6" path="res://assets/art/stickglow.png" id="10_b166f"]
+[ext_resource type="Texture2D" uid="uid://chlrr8crai1ce" path="res://assets/art/particles/softglow2.png" id="8_51lwf"]
+[ext_resource type="PackedScene" uid="uid://d1q2xosnvigo2" path="res://assets/prefabs/stick.tscn" id="9_m5vm6"]
 [ext_resource type="PackedScene" uid="uid://fm1okurh8qdq" path="res://assets/prefabs/small_bat_enemy.tscn" id="10_dxewc"]
+
+[sub_resource type="Curve" id="Curve_q0sb2"]
+_data = [Vector2(0.00849859, 0.946747), 0.0, 0.0, 0, 0, Vector2(0.246459, 0.495663), 0.0, 0.0, 0, 0, Vector2(0.413598, 0.793253), 0.0, 0.0, 0, 0, Vector2(0.634561, 0.511325), 0.0, 0.0, 0, 0, Vector2(0.824363, 0.786988), 0.0, 0.0, 0, 0, Vector2(1, 0.266988), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="CurveTexture" id="CurveTexture_5k2ff"]
+curve = SubResource("Curve_q0sb2")
+
+[sub_resource type="Gradient" id="Gradient_uach0"]
+offsets = PackedFloat32Array(0, 0.359322, 0.718644, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_aya6t"]
+gradient = SubResource("Gradient_uach0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a8ihg"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(100, 100, 1)
+emission_shape = 3
+emission_box_extents = Vector3(30, 30, 1)
+angle_max = 283.7
+initial_velocity_min = 64.04
+initial_velocity_max = 123.15
+gravity = Vector3(0, 900, 0)
+linear_accel_min = -30.54
+linear_accel_max = 26.6
+radial_accel_min = -35.47
+radial_accel_max = 57.14
+damping_min = 1.478
+damping_max = 11.823
+color_ramp = SubResource("GradientTexture1D_aya6t")
+alpha_curve = SubResource("CurveTexture_5k2ff")
+turbulence_enabled = true
+turbulence_noise_speed = Vector3(30, 0, 0)
+turbulence_influence_max = 0.165
+turbulence_initial_displacement_min = -14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oo5rt"]
 radius = 300.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h07hn"]
-radius = 300.0
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_j4wbb"]
-a = Vector2(-125.726, -50.802)
-b = Vector2(127.274, 49.198)
-
 [node name="root" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
+modulate = Color(0.731076, 0.837303, 0.892879, 1)
+z_index = 5
+position = Vector2(339, 409)
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_a8ihg")
+texture = ExtResource("8_51lwf")
+lifetime = 5.0
+preprocess = 4.0
+randomness = 0.11
+local_coords = true
+trail_sections = 10
+
+[node name="GameManager" type="Node2D" parent="."]
 
 [node name="player" parent="." instance=ExtResource("1_2w8ky")]
 
@@ -89,26 +133,5 @@ texture = ExtResource("4_mdlss")
 [node name="SmallBatEnemy" parent="." instance=ExtResource("10_dxewc")]
 position = Vector2(583, 925)
 
-[node name="stick" type="Node2D" parent="."]
-position = Vector2(-264.274, 544.802)
-script = ExtResource("9_6onuy")
-
-[node name="Sprite2D" type="Sprite2D" parent="stick"]
-z_index = 1
-texture = ExtResource("7_mdoqa")
-
-[node name="ItemGlow" type="Sprite2D" parent="stick"]
-modulate = Color(0.475308, 0.813957, 0.975563, 0.584314)
-texture = ExtResource("10_b166f")
-
-[node name="ShapeCast2D" type="ShapeCast2D" parent="stick"]
-shape = SubResource("CircleShape2D_h07hn")
-target_position = Vector2(0, 0)
-collision_mask = 8
-
-[node name="StaticBody2D" type="StaticBody2D" parent="stick"]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="stick/StaticBody2D"]
-shape = SubResource("SegmentShape2D_j4wbb")
+[node name="stick" parent="." instance=ExtResource("9_m5vm6")]
+position = Vector2(-268, 543)

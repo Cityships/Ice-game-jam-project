@@ -17,6 +17,8 @@ var channeling = false
 @onready var channel_anim_speed_ramp = 0.5
 var summon_cooldown = 13
 @export var max_summon_cooldown = 10
+@onready var hit_box = $Hitbox
+
 
 func channel_summon():
 	anim.speed_scale = 1
@@ -49,9 +51,12 @@ func _physics_process(delta):
 		anim.speed_scale += channel_anim_speed_ramp * delta
 	if summon_cooldown >= 0:
 		summon_cooldown -= delta
-	if position.distance_to(target_position) < scare_range:
+	if player.holding_item && position.distance_to(target_position) < scare_range:
 		anim.play("flyaway")
-		
+	if hit_box.is_colliding():
+		var object = hit_box.get_collider(0) as RigidBody2D
+		if object != null && !(object.linear_velocity.is_zero_approx()):
+			anim.play("flyaway")
 	
 	if is_summoner && anim.current_animation != "screech" && !channeling && position.distance_to(target_position) > 500:	
 		if shape_cast.is_colliding() && !channeling && summon_cooldown < 0:

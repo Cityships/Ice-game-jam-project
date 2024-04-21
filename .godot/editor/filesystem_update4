@@ -9,3 +9,4 @@ res://assets/scripts/SmallBatEnemy.gd
 res://assets/scenes/campfire.gd
 res://assets/scripts/stick.gd
 res://assets/scripts/playerscript.gd
+res://assets/prefabs/stick.tscn

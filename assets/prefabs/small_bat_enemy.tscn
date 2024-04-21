@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://fm1okurh8qdq"]
+[gd_scene load_steps=12 format=3 uid="uid://fm1okurh8qdq"]
 
 [ext_resource type="Script" path="res://assets/scripts/SmallBatEnemy.gd" id="1_teli4"]
 [ext_resource type="Texture2D" uid="uid://u2mbwcwcyqwu" path="res://assets/art/minibatspritesheet.png" id="2_t4ok3"]
@@ -299,6 +299,9 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_115lo"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_iceoq"]
+radius = 104.73
+
 [node name="SmallBatEnemy" type="CharacterBody2D"]
 collision_layer = 0
 motion_mode = 1
@@ -336,3 +339,8 @@ collision_mask = 8
 
 [node name="SummonCooldown" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="Hitbox" type="ShapeCast2D" parent="."]
+shape = SubResource("CircleShape2D_iceoq")
+target_position = Vector2(0, 0)
+collision_mask = 16

@@ -12,6 +12,24 @@ extends CharacterBody2D
 @onready var ItemAnim = $ItemAnimationPlayer
 var holding_item = false
 
+@export var throw_speed = 1000
+@onready var stick_preload = preload("res://assets/prefabs/stick.tscn") 
+
+func _is_holding_item() -> bool:
+	return holding_item
+
+func _process(delta):
+	
+	if holding_item && Input.is_action_just_pressed("throw item"):
+		var stick_clone = stick_preload.instantiate() as RigidBody2D
+		stick_clone.position = position
+		stick_clone.linear_velocity = (get_global_mouse_position() - position).normalized() * throw_speed
+		get_parent().add_child(stick_clone)
+		holding_item = false
+		ItemAnim.play("RESET")
+		held_item.visible = false
+		held_item_glow.visible = false
+
 func _physics_process(delta):
 	
 	if shape_cast.is_colliding():
@@ -19,12 +37,13 @@ func _physics_process(delta):
 		
 		if Input.is_action_just_pressed("interact") && !holding_item:
 			holding_item = true
-			obj.get_parent().queue_free()
+			obj.queue_free()
 			held_item.visible = true
 			held_item_glow.visible = true
-			ItemAnim.play("HoldingStick")
-			
+			ItemAnim.play("HoldingStick")	
+		
 	var direction: Vector2 = Input.get_vector("left","right","up","down")
+	
 	if direction.x < 0 && !sprite.flip_h:
 		sprite.flip_h = true
 		sprite.position.x += -40
@@ -39,20 +58,5 @@ func _physics_process(delta):
 	direction = direction.normalized()
 	velocity.x = move_toward(velocity.x, speed * direction.x, accel)
 	velocity.y = move_toward(velocity.y, speed * direction.y, accel)
-	# Add the gravity.
-	#if not is_on_floor():
-	#	velocity.y += gravity * delta
-
-	# Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-	#	velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	#var direction = Input.get_axis("ui_left", "ui_right")
-	#if direction:
-	#	velocity.x = direction * SPEED
-	#else:
-	#	velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()

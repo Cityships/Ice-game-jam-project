@@ -46,7 +46,7 @@ scale_min = 0.3
 scale_max = 1.2
 color_ramp = SubResource("GradientTexture1D_n476p")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xks4s"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxv12"]
 
 [node name="campfire" type="Node2D"]
 position = Vector2(-136, 852)
@@ -85,8 +85,9 @@ process_material = SubResource("ParticleProcessMaterial_6nv3p")
 texture = ExtResource("4_6xl41")
 lifetime = 2.0
 
-[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 scale = Vector2(15, 6)
-shape = SubResource("RectangleShape2D_xks4s")
-target_position = Vector2(0, 0)
-collision_mask = 128
+shape = SubResource("RectangleShape2D_vxv12")

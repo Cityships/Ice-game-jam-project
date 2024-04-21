@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://fm1okurh8qdq"]
+[gd_scene load_steps=13 format=3 uid="uid://fm1okurh8qdq"]
 
 [ext_resource type="Script" path="res://assets/scripts/SmallBatEnemy.gd" id="1_teli4"]
 [ext_resource type="Texture2D" uid="uid://u2mbwcwcyqwu" path="res://assets/art/minibatspritesheet.png" id="2_t4ok3"]
 [ext_resource type="Texture2D" uid="uid://cwn54o2sfeyns" path="res://assets/art/spot.png" id="3_trxvu"]
+[ext_resource type="Texture2D" uid="uid://b7q5m6t2k7u0o" path="res://assets/art/icecube.png" id="4_unvnf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8wydk"]
 radius = 50.0
@@ -346,3 +347,4 @@ target_position = Vector2(0, 0)
 collision_mask = 16
 
 [node name="icecube" type="Sprite2D" parent="."]
+texture = ExtResource("4_unvnf")

@@ -3,7 +3,6 @@ extends Node2D
 @onready var GPUParticleFire = $GPUParticlesFireIntensity
 ##fire intesnity, default value 1, good visuals <4
 @export var fire_intensity = 1
-@onready var shape_cast = $ShapeCast2D
 var particle_mat: ParticleProcessMaterial
 
 func _update_fire_intensity(amount):
@@ -18,9 +17,6 @@ func _ready():
 	GPUParticleFire.lifetime = fire_intensity
 	
 func _physics_process(delta):
-	if shape_cast.is_colliding():
-		var obj = shape_cast.get_collider(0)
-		obj.queue_free()
 	#add behaviour that adjusts the fire
 	pass
 

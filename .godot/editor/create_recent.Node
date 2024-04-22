@@ -1,3 +1,8 @@
+TextureProgressBar
+TextureRect
+ProgressBar
+RichTextLabel
+Control
 AudioStreamPlayer2D
 AudioStreamPlayer
 AnimationPlayer
@@ -8,7 +13,3 @@ Node2D
 ShapeCast2D
 Sprite2D
 RigidBody2D
-GPUParticles2D
-TextureRect
-Timer
-RayCast2D

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://clrgpm7230fwn"]
+[gd_scene load_steps=41 format=3 uid="uid://clrgpm7230fwn"]
 
 [ext_resource type="Script" path="res://assets/scripts/playerscript.gd" id="1_sks3k"]
 [ext_resource type="Texture2D" uid="uid://ix5rvokcxgy" path="res://assets/art/yetispritesheet.png" id="2_mwim6"]
@@ -7,8 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://chlrr8crai1ce" path="res://assets/art/particles/softglow2.png" id="4_s23d3"]
 [ext_resource type="Texture2D" uid="uid://kasrbnwxkiw6" path="res://assets/art/stickglow.png" id="5_8eguy"]
 [ext_resource type="Texture2D" uid="uid://csj0o53u1oqti" path="res://assets/art/wood.png" id="5_ohlnw"]
+[ext_resource type="Script" path="res://assets/scripts/ProgressBar.gd" id="6_hlvd2"]
+[ext_resource type="Texture2D" uid="uid://dv22pic6mwd8w" path="res://assets/art/nightbar.png" id="7_rbh3s"]
 [ext_resource type="AudioStream" uid="uid://cn7756kcs2go0" path="res://assets/sound/Footstep-001.ogg" id="8_b3ymt"]
+[ext_resource type="Texture2D" uid="uid://do1eyvarjmmci" path="res://assets/art/daybar.png" id="8_cgs0r"]
 [ext_resource type="AudioStream" uid="uid://d0p0bau30oyk6" path="res://assets/sound/Footstep-002.ogg" id="9_c0sks"]
+[ext_resource type="Texture2D" uid="uid://b3o41uweqcdtv" path="res://assets/art/framebar.png" id="9_sdx3e"]
 [ext_resource type="AudioStream" uid="uid://cdwcpf6sa3bah" path="res://assets/sound/Footstep-003.ogg" id="10_su2ui"]
 [ext_resource type="AudioStream" uid="uid://8mh7v6k0ev1q" path="res://assets/sound/Footstep-004.ogg" id="11_y24w2"]
 [ext_resource type="AudioStream" uid="uid://dcdef8tplesi4" path="res://assets/sound/Footstep-005.ogg" id="12_ms4ai"]
@@ -489,6 +493,45 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.25098, 0.223529, 0.733333, 0.137255)
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_hlvd2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_left = 63.0
+offset_top = 135.0
+offset_right = 131.0
+offset_bottom = 175.0
+scale = Vector2(9.76, 9.76)
+text = "You Win!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Control"]
+z_index = 5
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_under = ExtResource("7_rbh3s")
+texture_progress = ExtResource("8_cgs0r")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_sdx3e")
 
 [node name="ItemDetection" type="ShapeCast2D" parent="."]
 position = Vector2(0, 30)

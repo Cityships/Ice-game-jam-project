@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dc14dh7q6i16p"
+path="res://.godot/imported/Summon Screech 2.wav-0eab7d0098d39493a191e8510bd2f697.sample"
+
+[deps]
+
+source_file="res://assets/sound/Summon Screech 2.wav"
+dest_files=["res://.godot/imported/Summon Screech 2.wav-0eab7d0098d39493a191e8510bd2f697.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

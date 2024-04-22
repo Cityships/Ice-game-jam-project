@@ -29,6 +29,7 @@ func _process(delta):
 		ItemAnim.play("RESET")
 		held_item.visible = false
 		held_item_glow.visible = false
+		$Throw.play()
 
 func _physics_process(delta):
 	
@@ -40,7 +41,8 @@ func _physics_process(delta):
 			obj.queue_free()
 			held_item.visible = true
 			held_item_glow.visible = true
-			ItemAnim.play("HoldingStick")	
+			ItemAnim.play("HoldingStick")
+			$SoundAnimationPlayer.play("PickStickUp")
 		
 	var direction: Vector2 = Input.get_vector("left","right","up","down")
 	

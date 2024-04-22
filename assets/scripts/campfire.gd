@@ -83,5 +83,21 @@ func fireloop_volume():
 	var FireLoop2 = $FireLoop2
 	var FireLoop3 = $FireLoop3
 	
+	var volume = inverse_lerp(0, campfire_durability, fire_intensity)
+	
+	if volume == 0:
+		FireLoop1.volume_db = -80
+		FireLoop2.volume_db = -80
+		FireLoop3.volume_db = -80
+	
+	if volume > 0 and volume <= 0.8:
+		FireLoop1.volume_db = -3 + (volume * 3/0.8)
+		FireLoop2.volume_db = -30 + (volume * 35)
+		FireLoop3.volume_db = -30 + (volume * 30)
+	
+	if volume == 1:
+		FireLoop1.volume_db = 0
+		FireLoop2.volume_db = 3
+		FireLoop3.volume_db = 3
 	
 	pass

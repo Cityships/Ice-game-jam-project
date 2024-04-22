@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bysvi37e8w2dc"
+path="res://.godot/imported/Chirps Speed Up 3.wav-926021718f6b23c9ec03fb40333224ee.sample"
+
+[deps]
+
+source_file="res://assets/sound/Chirps Speed Up 3.wav"
+dest_files=["res://.godot/imported/Chirps Speed Up 3.wav-926021718f6b23c9ec03fb40333224ee.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

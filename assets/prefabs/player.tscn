@@ -421,7 +421,6 @@ script = ExtResource("6_phfxl")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ProgressBar"]
 visible = false
-layout_mode = 0
 offset_left = 40.0
 offset_top = 152.0
 offset_right = 106.0
@@ -433,7 +432,6 @@ autowrap_mode = 0
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/ProgressBar"]
 z_index = 10
-layout_mode = 0
 offset_right = 784.0
 offset_bottom = 152.0
 max_value = 60.0
@@ -442,7 +440,6 @@ texture_under = ExtResource("7_y65mm")
 texture_progress = ExtResource("8_2h7tl")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/ProgressBar"]
-layout_mode = 0
 offset_right = 784.0
 offset_bottom = 152.0
 texture = ExtResource("6_loted")

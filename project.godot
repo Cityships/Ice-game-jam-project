@@ -13,7 +13,7 @@ config_version=5
 config/name="sharedproject"
 run/main_scene="res://assets/scenes/scene1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://assets/engineering_art/character1.png"
+config/icon="res://assets/art/character2.png"
 
 [autoload]
 

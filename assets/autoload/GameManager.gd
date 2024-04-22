@@ -13,6 +13,7 @@ var bat_obj
 
 @onready var game_over_text = $player/CanvasLayer/GameOverText
 @onready var night_timer = $player/CanvasLayer/ProgressBar
+var game_started = false
 @onready var minus_plus = [1, -1]
 # minus_plus used to switch polarity
 # I want to avoid spawning bats close to the campfire
@@ -91,6 +92,10 @@ func _on_StickSpawnTimer_timeout():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
+	if WaveNumber >=2 && !game_started:
+		$player/CanvasLayer/ProgressBar/Timer.start()
+		game_started = true
+		
 	if WaveNumber == -1 and $player.holding_item:
 		LabelText.text = "Left click to throw sticks.
 		Add sticks to your campfire"
@@ -120,7 +125,6 @@ func _on_wave_timer_timeout():
 	# Numbers displayed ot runtime are representing
 	# BatSpawnTimer and StickSpawnTimer respectively.
 	# That's how I've balanced the waves.
-	
 	WaveNumber += 1
 	print("Wave ", WaveNumber," start!")
 	
@@ -148,15 +152,15 @@ func _on_wave_timer_timeout():
 		pass
 	
 	if WaveNumber == 5:
-		LabelText.text = "4, 6"
+		#LabelText.text = "4, 6"
 		BatSpawnTimer.start(4)
 		StickSpawnTimer.start(6)
 		stick_offset_spawn = 1000
-		WaveTimer.start(25)
+		WaveTimer.start(20)
 		pass
 	
 	if WaveNumber == 6:
-		LabelText.text = "2, 2.2"
+		#LabelText.text = "2, 2.2"
 		BatSpawnTimer.start(2)
 		StickSpawnTimer.start(2.2)
 		stick_offset_spawn = 1500
@@ -165,7 +169,7 @@ func _on_wave_timer_timeout():
 		pass
 	
 	if WaveNumber == 7:
-		LabelText.text = "3, 2"
+		#LabelText.text = "3, 2"
 		BatSpawnTimer.start(3)
 		StickSpawnTimer.start(2)
 		stick_offset_spawn = 700
@@ -174,16 +178,16 @@ func _on_wave_timer_timeout():
 		pass
 	
 	if WaveNumber == 8:
-		LabelText.text = "4, 2"
+		#LabelText.text = "4, 2"
 		BatSpawnTimer.start(4)
 		StickSpawnTimer.start(2)
 		stick_offset_spawn = 1000
 		summoner_spawn_chance = 0.0
-		WaveTimer.start(25)
+		WaveTimer.start(20)
 		pass
 	
 	if WaveNumber == 9:
-		LabelText.text = "4.6, 4"
+		#LabelText.text = "4.6, 4"
 		BatSpawnTimer.start(4.6)
 		StickSpawnTimer.start(4)
 		stick_offset_spawn = 2000
@@ -192,7 +196,7 @@ func _on_wave_timer_timeout():
 		pass
 	
 	if WaveNumber == 10:
-		LabelText.text = "4, 6"
+		#LabelText.text = "4, 6"
 		BatSpawnTimer.start(4)
 		StickSpawnTimer.start(6)
 		summoner_spawn_chance = 0.5
@@ -200,16 +204,16 @@ func _on_wave_timer_timeout():
 		pass
 	
 	if WaveNumber == 11:
-		LabelText.text = "3, 2"
+		#LabelText.text = "3, 2"
 		BatSpawnTimer.start(3)
 		StickSpawnTimer.start(2)
 		stick_offset_spawn = 1000
 		summoner_spawn_chance = 0.8
-		WaveTimer.start(20)
+		WaveTimer.start(15)
 		pass
 	
 	if WaveNumber == 11:
-		LabelText.text = "1.3, 2"
+		#LabelText.text = "1.3, 2"
 		BatSpawnTimer.start(1.3)
 		StickSpawnTimer.start(2)
 		stick_offset_spawn = 1000
@@ -217,15 +221,24 @@ func _on_wave_timer_timeout():
 		pass
 	
 	if WaveNumber == 12:
-		LabelText.text = "Just a little more."
-		BatSpawnTimer.start(7)
+		#LabelText.text = "Just a little more."
+		BatSpawnTimer.start(5)
 		StickSpawnTimer.start(2.5)
 		stick_offset_spawn = 1000
-		WaveTimer.start(20)
+		WaveTimer.start(10)
 		summoner_spawn_chance = 0
 		pass
 	
 	if WaveNumber == 13:
+		#LabelText.text = "1.3, 2"
+		BatSpawnTimer.start(1.5)
+		StickSpawnTimer.start(1.8)
+		stick_offset_spawn = 1200
+		WaveTimer.start(20)
+		summoner_spawn_chance = 0.5
+		pass
+	
+	if WaveNumber == 14:
 		LabelText.text = ""
 		BatSpawnTimer.stop()
 		StickSpawnTimer.stop()

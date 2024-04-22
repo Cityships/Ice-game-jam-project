@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c6sr6vx2urv8i"
+path="res://.godot/imported/Fire Layer 1.ogg-125138523716cc1f753a22417df748ff.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sound/Fire Layer 1.ogg"
+dest_files=["res://.godot/imported/Fire Layer 1.ogg-125138523716cc1f753a22417df748ff.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

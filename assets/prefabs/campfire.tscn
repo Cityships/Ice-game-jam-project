@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bqirkwxpwlj6r" path="res://assets/art/campfire.png" id="2_8sqjk"]
 [ext_resource type="Texture2D" uid="uid://chlrr8crai1ce" path="res://assets/art/particles/softglow2.png" id="3_au1nh"]
 [ext_resource type="Texture2D" uid="uid://b0s5n1nqnmigf" path="res://assets/art/particles/puff1.png" id="4_6xl41"]
-[ext_resource type="AudioStream" uid="uid://cpbfxj8pkqjej" path="res://assets/sound/Fire Layer 1.ogg" id="5_ve8y5"]
+[ext_resource type="AudioStream" uid="uid://c6sr6vx2urv8i" path="res://assets/sound/Fire Layer 1.ogg" id="5_ve8y5"]
 [ext_resource type="AudioStream" uid="uid://c4g1vugyekbpd" path="res://assets/sound/Fire Layer 3.wav" id="6_6hr86"]
 [ext_resource type="AudioStream" uid="uid://dkkh1ns4a5ded" path="res://assets/sound/Fire Layer 2.ogg" id="6_38qng"]
 [ext_resource type="AudioStream" uid="uid://dliu8xwsvcsj3" path="res://assets/sound/Fire Fizz 1.wav" id="8_v52dw"]
@@ -162,7 +162,7 @@ _data = {
 }
 
 [node name="campfire" type="Node2D"]
-position = Vector2(-136, 852)
+z_index = 1
 script = ExtResource("1_1ttha")
 campfire_durability = 5.0
 
@@ -224,42 +224,52 @@ shape = SubResource("RectangleShape2D_45ts2")
 [node name="FireLoop1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_ve8y5")
 autoplay = true
-attenuation = 2.54912
+max_distance = 7000.0
+attenuation = 3.13834
 panning_strength = 1.5
+bus = &"FireLoop"
 
 [node name="FireLoop2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_38qng")
 autoplay = true
-attenuation = 0.812252
+max_distance = 7000.0
+attenuation = 1.46409
 panning_strength = 1.5
+bus = &"FireLoop"
 
 [node name="FireLoop3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_6hr86")
 volume_db = 3.0
 autoplay = true
-attenuation = 2.54912
+max_distance = 7000.0
+attenuation = 4.28709
 panning_strength = 1.5
+bus = &"FireLoop"
 
 [node name="FireFizz" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_s3d81")
 volume_db = 3.0
 panning_strength = 1.5
+bus = &"FireSFX"
 
 [node name="FireSparks" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_qpk8h")
 volume_db = 6.0
 panning_strength = 2.0
+bus = &"FireSFX"
 
 [node name="FireStickClatter" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_e7n8e")
 pitch_scale = 0.75
 max_polyphony = 2
 panning_strength = 2.0
+bus = &"FireSFX"
 
 [node name="FireStickLand" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_3blah")
 volume_db = 3.0
 panning_strength = 2.0
+bus = &"FireSFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,0 +1,109 @@
+[gd_resource type="AudioBusLayout" load_steps=9 format=3 uid="uid://rkpacui5ij75"]
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_soihn"]
+resource_name = "Compressor"
+threshold = -4.0
+ratio = 3.0
+gain = 2.0
+mix = 0.6
+
+[sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_4lehl"]
+resource_name = "Limiter"
+soft_clip_db = 0.0
+soft_clip_ratio = 4.0
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_1nwu4"]
+resource_name = "Compressor"
+threshold = -4.0
+ratio = 2.0
+attack_us = 30.0
+sidechain = &"FireSFX"
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_rot5f"]
+resource_name = "Compressor"
+threshold = -6.0
+ratio = 3.0
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_hc70q"]
+resource_name = "Compressor"
+threshold = -21.0
+ratio = 2.0
+release_ms = 200.0
+mix = 0.6
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_h5kth"]
+resource_name = "Compressor"
+threshold = -4.0
+ratio = 2.4
+gain = 2.0
+attack_us = 25.0
+release_ms = 100.0
+sidechain = &"BatImpSFX"
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_hugbt"]
+resource_name = "Compressor"
+threshold = -24.0
+ratio = 8.0
+release_ms = 100.0
+sidechain = &"PlayerSFX"
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_7tbcj"]
+resource_name = "Compressor"
+threshold = -12.0
+release_ms = 100.0
+mix = 0.5
+
+[resource]
+bus/0/volume_db = 1.45823
+bus/0/effect/0/effect = SubResource("AudioEffectCompressor_soihn")
+bus/0/effect/0/enabled = true
+bus/0/effect/1/effect = SubResource("AudioEffectLimiter_4lehl")
+bus/0/effect/1/enabled = true
+bus/1/name = &"FireLoop"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -0.130497
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectCompressor_1nwu4")
+bus/1/effect/0/enabled = true
+bus/2/name = &"FireSFX"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectCompressor_rot5f")
+bus/2/effect/0/enabled = true
+bus/3/name = &"BatImpSFX"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectCompressor_hc70q")
+bus/3/effect/0/enabled = true
+bus/4/name = &"BatOther"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = 0.0
+bus/4/send = &"Master"
+bus/4/effect/0/effect = SubResource("AudioEffectCompressor_h5kth")
+bus/4/effect/0/enabled = true
+bus/5/name = &"PlayerStep"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = 0.0
+bus/5/send = &"Master"
+bus/5/effect/0/effect = SubResource("AudioEffectCompressor_hugbt")
+bus/5/effect/0/enabled = true
+bus/6/name = &"PlayerSFX"
+bus/6/solo = false
+bus/6/mute = false
+bus/6/bypass_fx = false
+bus/6/volume_db = 0.0
+bus/6/send = &"Master"
+bus/6/effect/0/effect = SubResource("AudioEffectCompressor_7tbcj")
+bus/6/effect/0/enabled = true

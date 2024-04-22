@@ -12,11 +12,11 @@ var target_position: Vector2 = Vector2()
 @onready var shape_cast = $ShapeCast2D
 @export var is_summoner = true
 ##range for scaring summoner bats
-@export var scare_range = 100
+#@export var scare_range = 100
 var channeling = false
 @onready var channel_anim_speed_ramp = 0.5
-var summon_cooldown = 13
-@export var max_summon_cooldown = 10
+var summon_cooldown = 6
+@export var max_summon_cooldown = 8
 @onready var hit_box = $Hitbox
 @onready var ice_cube = $icecube
 @onready var offset = Vector2(0, -200)
@@ -25,8 +25,10 @@ var has_ice_cube = false
 signal summon_signal
 @onready var game_manager = get_parent()
 
-func make_summoner():
-	is_summoner = true
+#func make_summoner():
+	#is_summoner = true
+	# This func was used in GameManager script but I just
+	# accessed the variable there instead (is that bad or good?)
 func drop_ice():
 	ice_cube.visible = false
 	var icecube_clone = ice_cube_preload.instantiate() as RigidBody2D
@@ -52,6 +54,8 @@ func _defeated():
 
 func _ready():
 	
+	$Chirps.play()
+	
 	summon_signal.connect(game_manager._on_summon_bats)
 	if is_summoner:
 		has_ice_cube = false
@@ -62,7 +66,7 @@ func _ready():
 		target_position = get_parent().get_node("campfire").position + offset
 	timer.timeout.connect(_on_timer_timeout)
 	#connect the signal
-	
+
 func _physics_process(delta):
 	
 	if !anim.is_playing():
@@ -78,13 +82,18 @@ func _physics_process(delta):
 		summon_cooldown -= delta
 	#if player.holding_item && position.distance_to(target_position) < scare_range:
 	#	anim.play("flyaway")
+	
 	if hit_box.is_colliding():
 		var object = hit_box.get_collider(0) as RigidBody2D
-		if object != null && !(object.linear_velocity.is_zero_approx()):
+		#print(object)
+		
+		if object != null and !object.linear_velocity.is_zero_approx():
+			#print(object.linear_velocity)
 			has_ice_cube = false
 			anim.play("flyaway")
-	
-	if is_summoner && anim.current_animation != "screech" && !channeling && position.distance_to(target_position) > 500:	
+			object.queue_free()
+		
+	if is_summoner && anim.current_animation != "screech" && !channeling && position.distance_to(target_position) > 700:
 		if !channeling && summon_cooldown < 0:
 			channeling = true
 			channel_summon()

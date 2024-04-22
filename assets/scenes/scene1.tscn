@@ -1,14 +1,22 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2cf84ka4f236"]
+[gd_scene load_steps=18 format=3 uid="uid://d2cf84ka4f236"]
 
 [ext_resource type="PackedScene" uid="uid://clrgpm7230fwn" path="res://assets/prefabs/player.tscn" id="1_2w8ky"]
 [ext_resource type="Script" path="res://assets/autoload/GameManager.gd" id="2_3hkvr"]
 [ext_resource type="TileSet" uid="uid://cejloqnpexojn" path="res://assets/prefabs/floortile.tres" id="2_g5ph3"]
-[ext_resource type="TileSet" uid="uid://dcigvdisyk286" path="res://assets/prefabs/walltile.tres" id="3_w8adm"]
-[ext_resource type="Script" path="res://assets/scripts/drawcollisionpolygon.gd" id="4_ixb01"]
 [ext_resource type="PackedScene" uid="uid://bnlhisaaqbdug" path="res://assets/prefabs/campfire.tscn" id="7_ithq3"]
+[ext_resource type="AudioStream" uid="uid://c3gqv865v4q6k" path="res://assets/sound/Fire Stick Land-001.ogg" id="7_rvhh1"]
 [ext_resource type="Texture2D" uid="uid://chlrr8crai1ce" path="res://assets/art/particles/softglow2.png" id="8_51lwf"]
+[ext_resource type="AudioStream" uid="uid://dao1rjj1urbyj" path="res://assets/sound/Fire Stick Land-002.ogg" id="8_87wy5"]
+[ext_resource type="AudioStream" uid="uid://bo7nvasevwb7c" path="res://assets/sound/Fire Stick Land-003.ogg" id="9_3ra2i"]
 [ext_resource type="PackedScene" uid="uid://d1q2xosnvigo2" path="res://assets/prefabs/stick.tscn" id="9_m5vm6"]
-[ext_resource type="PackedScene" uid="uid://fm1okurh8qdq" path="res://assets/prefabs/small_bat_enemy.tscn" id="10_dxewc"]
+[ext_resource type="AudioStream" uid="uid://clc4ksrpcv4dl" path="res://assets/sound/Fire Stick Land-004.ogg" id="10_1fwo5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dsaux"]
+font_size = 120
+font_color = Color(0.2, 0.490196, 0.8, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0.295, 1)
 
 [sub_resource type="Curve" id="Curve_q0sb2"]
 _data = [Vector2(0.00849859, 0.946747), 0.0, 0.0, 0, 0, Vector2(0.246459, 0.495663), 0.0, 0.0, 0, 0, Vector2(0.413598, 0.793253), 0.0, 0.0, 0, 0, Vector2(0.634561, 0.511325), 0.0, 0.0, 0, 0, Vector2(0.824363, 0.786988), 0.0, 0.0, 0, 0, Vector2(1, 0.266988), 0.0, 0.0, 0, 0]
@@ -46,19 +54,49 @@ turbulence_noise_speed = Vector3(30, 0, 0)
 turbulence_influence_max = 0.165
 turbulence_initial_displacement_min = -14.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_t5mpa"]
+random_pitch = 1.1
+random_volume_offset_db = 2.0
+streams_count = 4
+stream_0/stream = ExtResource("7_rvhh1")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("8_87wy5")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("9_3ra2i")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("10_1fwo5")
+stream_3/weight = 1.0
+
 [node name="root" type="Node2D"]
 script = ExtResource("2_3hkvr")
-offset_spawn = 1600
+bat_offset_spawn = 2000
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 8.0
-autostart = true
+[node name="BatSpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="StickSpawnTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="WaveTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 2.0
+one_shot = true
+
+[node name="TutorialText" type="Label" parent="."]
+offset_left = -818.0
+offset_top = -787.0
+offset_right = 820.0
+offset_bottom = -258.0
+text = "Msgs and debug displayed here at runtime"
+label_settings = SubResource("LabelSettings_dsaux")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 visible = false
 modulate = Color(0.731076, 0.837303, 0.892879, 1)
 z_index = 5
-position = Vector2(339, 409)
 amount = 40
 process_material = SubResource("ParticleProcessMaterial_a8ihg")
 texture = ExtResource("8_51lwf")
@@ -67,67 +105,34 @@ preprocess = 4.0
 randomness = 0.11
 local_coords = true
 trail_sections = 10
-
-[node name="player" parent="." instance=ExtResource("1_2w8ky")]
+metadata/_edit_lock_ = true
 
 [node name="Map" type="Node2D" parent="."]
+visible = false
 
 [node name="Tilemap floor" type="TileMap" parent="Map"]
+visible = false
 z_index = -10
 tile_set = ExtResource("2_g5ph3")
 format = 2
-layer_0/tile_data = PackedInt32Array(-2, 0, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, 3, 0, 0, 4, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0, 65535, 0, 0, 65534, 0, 0, -65532, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 131076, 0, 0, 131075, 0, 0, 131074, 0, 0, 131073, 0, 0, 131072, 0, 0, 196607, 0, 0, 196606, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 262147, 0, 0, 196611, 0, 0, 196610, 0, 0, 262146, 0, 0, 131077, 0, 0, 65541, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 524292, 0, 0, 458756, 0, 0, 589828, 0, 0, 655364, 0, 0, 655363, 0, 0, 589827, 0, 0, 524291, 0, 0, 458755, 0, 0, 524290, 0, 0, 589826, 0, 0, 655362, 0, 0, 458754, 0, 0, 458753, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 589824, 0, 0, 524288, 0, 0, 458752, 0, 0, 655360, 0, 0, 655359, 0, 0, 589823, 0, 0, 524287, 0, 0, 524286, 0, 0, 589822, 0, 0, 720895, 0, 0, 655358, 0, 0, 720894, 0, 0)
-
-[node name="map physics geometry" type="Node2D" parent="Map"]
-
-[node name="TileMap walls" type="TileMap" parent="Map/map physics geometry"]
-tile_set = ExtResource("3_w8adm")
-format = 2
-layer_0/tile_data = PackedInt32Array(-65538, 1, 0, -65537, 1, 0, -131072, 1, 0, -131071, 1, 0, -131070, 1, 0, 65533, 1, 0, 131069, 1, 0, 196605, 1, 0, -65531, 1, 0, 5, 1, 0, 6, 1, 0, 65542, 1, 0, 131078, 1, 0, 458749, 1, 0, 524285, 1, 0, 393222, 1, 0, 458758, 1, 0, 524294, 1, 0, 589830, 1, 0, 589829, 1, 0, 655365, 1, 0, 720901, 1, 0, 720900, 1, 0, 720899, 1, 0, 720898, 1, 0, 720897, 1, 0, 720896, 1, 0)
-
-[node name="polygonal walls" type="StaticBody2D" parent="Map/map physics geometry"]
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/map physics geometry/polygonal walls"]
-polygon = PackedVector2Array(-184, -246, -482, -91, -277, 179)
-script = ExtResource("4_ixb01")
-
-[node name="Polygon2D" type="Polygon2D" parent="Map/map physics geometry/polygonal walls/CollisionPolygon2D"]
-color = Color(0, 0, 0, 1)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Map/map physics geometry/polygonal walls"]
-scale = Vector2(0.217609, 0.212036)
-polygon = PackedVector2Array(3717.68, -1504.46, 1424.57, -1344.11, 1521.08, -212.228, 3731.47, -37.7294)
-script = ExtResource("4_ixb01")
-
-[node name="Polygon2D" type="Polygon2D" parent="Map/map physics geometry/polygonal walls/CollisionPolygon2D2"]
-color = Color(0, 0, 0, 1)
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Map/map physics geometry/polygonal walls"]
-polygon = PackedVector2Array(-182, 1024, -125, 1284, 90, 1473, -382, 1479, -330, 942)
-script = ExtResource("4_ixb01")
-
-[node name="Polygon2D" type="Polygon2D" parent="Map/map physics geometry/polygonal walls/CollisionPolygon2D3"]
-color = Color(0, 0, 0, 1)
+layer_0/tile_data = PackedInt32Array(-131076, 0, 0, -65540, 0, 0, -4, 0, 0, 65532, 0, 0, 131068, 0, 0, 196604, 0, 0, -131075, 0, 0, -65539, 0, 0, -3, 0, 0, 65533, 0, 0, 131069, 0, 0, 196605, 0, 0, -131074, 0, 0, -65538, 0, 0, -2, 0, 0, 65534, 0, 0, 131070, 0, 0, 196606, 0, 0, -131073, 0, 0, -65537, 0, 0, -1, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, -196608, 0, 0, -131072, 0, 0, -65536, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, -196607, 0, 0, -131071, 0, 0, -65535, 0, 0, 1, 0, 0, 65537, 0, 0, 131073, 0, 0, -196606, 0, 0, -131070, 0, 0, -65534, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, -196605, 0, 0, -131069, 0, 0, -65533, 0, 0, 3, 0, 0, 65539, 0, 0, 131075, 0, 0, 458750, 0, 0, 393214, 0, 0, 393215, 0, 0, 327679, 0, 0, 262143, 0, 0)
 
 [node name="campfire" parent="." instance=ExtResource("7_ithq3")]
+metadata/_edit_lock_ = true
+
+[node name="player" parent="." instance=ExtResource("1_2w8ky")]
+position = Vector2(-298, -270)
 
 [node name="stick" parent="." instance=ExtResource("9_m5vm6")]
-position = Vector2(-268, 543)
-linear_velocity = Vector2(-100, -100)
-linear_damp = 30.0
+position = Vector2(-448, 259)
+rotation = -0.851721
 
 [node name="stick2" parent="." instance=ExtResource("9_m5vm6")]
-position = Vector2(-657, 801)
+position = Vector2(317, -202)
 
-[node name="stick3" parent="." instance=ExtResource("9_m5vm6")]
-position = Vector2(-449, 662)
+[node name="StickSpawnSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_t5mpa")
+volume_db = -12.0
+pitch_scale = 0.5
 
-[node name="stick4" parent="." instance=ExtResource("9_m5vm6")]
-position = Vector2(-590, 505)
-
-[node name="stick5" parent="." instance=ExtResource("9_m5vm6")]
-position = Vector2(-717, 640)
-
-[node name="SmallBatEnemy5" parent="." instance=ExtResource("10_dxewc")]
-position = Vector2(1563, 68)
+[connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]

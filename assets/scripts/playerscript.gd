@@ -23,6 +23,7 @@ func _process(delta):
 	if holding_item && Input.is_action_just_pressed("throw item"):
 		var stick_clone = stick_preload.instantiate() as RigidBody2D
 		stick_clone.position = position
+		stick_clone.rotation = randf_range(-90, 50)
 		stick_clone.linear_velocity = (get_global_mouse_position() - position).normalized() * throw_speed
 		get_parent().add_child(stick_clone)
 		holding_item = false

@@ -9,27 +9,30 @@ var particle_mat: ParticleProcessMaterial
 signal no_fire
 @onready var game_manager = get_parent()
 
+@onready var FireLoop1 = $FireLoop1
+@onready var FireLoop2 = $FireLoop2
+@onready var FireLoop3 = $FireLoop3
+
 #func _on_campfire_damaged():
 	
 	#_update_fire_intensity(1)
-		
+		#This function is now redundant, can I delete?
 
 func _update_fire_intensity(amount):
 	
-	
-	if fire_intensity < campfire_durability:
-		fire_intensity += amount
-	
+	fire_intensity += amount
 	#I'm using campfire_durability as a kind of max health.
 	#fire_intensity is the current health and it determines the state of particles.
+	#amount = +1 to add intensity and -1 to subtract
 	
 	fire_intensity = clampi(fire_intensity, 0, campfire_durability)
+	#print("Fire intensity = ", fire_intensity)
 	
-	if fire_intensity == 0:
+	if fire_intensity <= 0:
 		particle_mat.scale_min = 0
 		particle_mat.scale_max = 0
 		GPUParticleFire.lifetime = 0
-		print("campfire is out")
+		#print("campfire is out")
 		
 		emit_signal("no_fire")
 		pass
@@ -72,18 +75,15 @@ func _physics_process(delta):
 	
 	fireloop_volume()
 	
-	#add behaviour that adjusts the fire
 	pass
 
 func fireloop_volume():
 	# this function changes sound of campfire based on health
 	# Balanced volumes are 0dB Fireloop1, 0dB Fireloop2, 3dB Fireloop3
 	
-	var FireLoop1 = $FireLoop1
-	var FireLoop2 = $FireLoop2
-	var FireLoop3 = $FireLoop3
-	
 	var volume = inverse_lerp(0, campfire_durability, fire_intensity)
+	# inverse_lerp so I can change the campfire health and
+	# volume logic will still work.
 	
 	if volume == 0:
 		FireLoop1.volume_db = -80

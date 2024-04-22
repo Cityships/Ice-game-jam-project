@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://clrgpm7230fwn"]
+[gd_scene load_steps=42 format=3 uid="uid://clrgpm7230fwn"]
 
 [ext_resource type="Script" path="res://assets/scripts/playerscript.gd" id="1_sks3k"]
 [ext_resource type="Texture2D" uid="uid://ix5rvokcxgy" path="res://assets/art/yetispritesheet.png" id="2_mwim6"]
@@ -204,11 +204,21 @@ _data = {
 "walking": SubResource("Animation_sexps")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_oc02p"]
+font_size = 182
+font_color = Color(0.439216, 0.0392157, 0.0392157, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_opivl"]
 shader = ExtResource("3_j28ff")
 shader_parameter/color = null
 shader_parameter/multiplier = -0.1
 shader_parameter/softness = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_gj1th"]
+font_size = 120
+font_color = Color(0.980392, 0.47451, 0.0588235, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ba1cu"]
 radius = 300.0
@@ -366,12 +376,13 @@ _data = {
 }
 
 [node name="player" type="CharacterBody2D"]
+z_index = 2
 collision_layer = 8
 motion_mode = 1
 script = ExtResource("1_sks3k")
-speed = 500.0
-accel = 200.0
-throw_speed = 1200
+speed = 750.0
+accel = 100.0
+throw_speed = 3000
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_mwim6")
@@ -384,7 +395,7 @@ scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_s4uw6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.38, 0.38)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -400,26 +411,24 @@ texture = ExtResource("4_6xj6y")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GameOverText" type="RichTextLabel" parent="CanvasLayer"]
+[node name="GameOverText" type="Label" parent="CanvasLayer"]
 visible = false
-modulate = Color(0.891541, 0, 0.137316, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -277.0
-offset_top = -20.0
-offset_right = -190.0
-offset_bottom = 20.0
+offset_left = -157.0
+offset_top = -89.0
+offset_right = 162.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(7.41269, 7.41269)
 size_flags_horizontal = 4
 text = "Game Over"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
+label_settings = SubResource("LabelSettings_oc02p")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="canvas light" type="TextureRect" parent="CanvasLayer"]
 visible = false
@@ -490,23 +499,22 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("6_phfxl")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ProgressBar"]
+[node name="WinLabel" type="Label" parent="CanvasLayer/ProgressBar"]
 visible = false
 layout_mode = 0
-offset_left = 40.0
-offset_top = 152.0
-offset_right = 106.0
-offset_bottom = 192.0
-scale = Vector2(9.72381, 9.47804)
+offset_right = 1151.0
+offset_bottom = 648.0
 text = "You win!"
-fit_content = true
-autowrap_mode = 0
+label_settings = SubResource("LabelSettings_gj1th")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/ProgressBar"]
 z_index = 10
 layout_mode = 0
 offset_right = 784.0
 offset_bottom = 152.0
+scale = Vector2(0.52, 0.52)
 max_value = 60.0
 step = 0.5
 texture_under = ExtResource("7_y65mm")
@@ -516,14 +524,16 @@ texture_progress = ExtResource("8_2h7tl")
 layout_mode = 0
 offset_right = 784.0
 offset_bottom = 152.0
+scale = Vector2(0.52, 0.52)
 texture = ExtResource("6_loted")
 
 [node name="Timer" type="Timer" parent="CanvasLayer/ProgressBar"]
-wait_time = 60.0
+process_callback = 0
+wait_time = 300.0
 one_shot = true
 
 [node name="ItemDetection" type="ShapeCast2D" parent="."]
-position = Vector2(0, 30)
+scale = Vector2(0.64, 0.64)
 shape = SubResource("CircleShape2D_ba1cu")
 target_position = Vector2(0, 0)
 collision_mask = 16
@@ -541,33 +551,37 @@ position = Vector2(-18, -59)
 [node name="HeldItem" type="Sprite2D" parent="item"]
 visible = false
 z_index = 1
-position = Vector2(0, -72.5)
+position = Vector2(0, -70)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_ohlnw")
 
 [node name="HeldItemGlow" type="Sprite2D" parent="item"]
 visible = false
 modulate = Color(0.305882, 0.831373, 0.113725, 0.658824)
-position = Vector2(0, -72.5)
+position = Vector2(0, -70)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_8eguy")
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_a1ldt")
 volume_db = -20.0
+bus = &"PlayerStep"
 
 [node name="StickPickUpStart" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_0j25i")
 volume_db = -8.0
+bus = &"PlayerSFX"
 
 [node name="StickPickUpEnd" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_x816i")
 volume_db = -10.0
+bus = &"PlayerSFX"
 
 [node name="Throw" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_hg5o3")
 volume_db = -9.0
 pitch_scale = 0.75
+bus = &"PlayerSFX"
 
 [node name="SoundAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

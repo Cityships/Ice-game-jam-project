@@ -2,7 +2,7 @@ extends Control
 
 @onready var timer = $Timer
 @onready var texture_progress = $TextureProgressBar
-@onready var win_text = $RichTextLabel
+@onready var win_text = $WinLabel
 var vignette
 var screen_hue
 var modulate_alpha_speed = .2
@@ -18,11 +18,12 @@ func _ready():
 	# Replace with function body.
 
 func _on_timer_timeout():
+	print("Victory Time")
 	win_text.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	texture_progress.value = 60 - timer.time_left
+	texture_progress.value = (240 - timer.time_left)/240 * 60
 
 func _physics_process(delta):
 	if timer.time_left < 5 && timer.time_left > -10:

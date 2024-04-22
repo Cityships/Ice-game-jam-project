@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://csj0o53u1oqti" path="res://assets/art/wood.png" id="2_1vxbq"]
 [ext_resource type="Texture2D" uid="uid://kasrbnwxkiw6" path="res://assets/art/stickglow.png" id="3_ctnf4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_klkgg"]
-size = Vector2(250, 50)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_utpno"]
+radius = 6.51396
+height = 51.2006
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h07hn"]
 radius = 300.0
@@ -15,22 +16,29 @@ a = Vector2(-125.726, -50.802)
 b = Vector2(127.274, 49.198)
 
 [node name="stick" type="RigidBody2D"]
+z_index = 1
 collision_layer = 16
+mass = 2.0
 gravity_scale = 0.0
-linear_damp = 1.5
+linear_damp = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 0.349066
-shape = SubResource("RectangleShape2D_klkgg")
+position = Vector2(1, -4)
+rotation = -1.19381
+scale = Vector2(5.955, 5.955)
+shape = SubResource("CapsuleShape2D_utpno")
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("1_eiyf8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+visibility_layer = 2
 z_index = 1
 texture = ExtResource("2_1vxbq")
+metadata/_edit_lock_ = true
 
 [node name="ItemGlow" type="Sprite2D" parent="Node2D"]
+visible = false
 modulate = Color(0.475308, 0.813957, 0.975563, 0.584314)
 texture = ExtResource("3_ctnf4")
 

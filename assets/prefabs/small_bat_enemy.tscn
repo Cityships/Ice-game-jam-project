@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://fm1okurh8qdq"]
+[gd_scene load_steps=32 format=3 uid="uid://fm1okurh8qdq"]
 
 [ext_resource type="Script" path="res://assets/scripts/SmallBatEnemy.gd" id="1_teli4"]
 [ext_resource type="Texture2D" uid="uid://u2mbwcwcyqwu" path="res://assets/art/minibatspritesheet.png" id="2_t4ok3"]
@@ -9,6 +9,15 @@
 [ext_resource type="AudioStream" uid="uid://dvnk1npdyekha" path="res://assets/sound/Small Bat Flap 3.ogg" id="7_t8yk3"]
 [ext_resource type="AudioStream" uid="uid://bgbg85qwdd4od" path="res://assets/sound/Small Bat Flap 4.ogg" id="8_uk6s3"]
 [ext_resource type="AudioStream" uid="uid://to1w1opj50au" path="res://assets/sound/Small Bat Flap 5.ogg" id="9_nj0uu"]
+[ext_resource type="AudioStream" uid="uid://diib034mgahlk" path="res://assets/sound/Chirps Speed Up 1.wav" id="11_m6dav"]
+[ext_resource type="AudioStream" uid="uid://dp1iqbm1fsfj8" path="res://assets/sound/Chirps Speed Up 2.wav" id="12_vugyf"]
+[ext_resource type="AudioStream" uid="uid://bysvi37e8w2dc" path="res://assets/sound/Chirps Speed Up 3.wav" id="13_4hjko"]
+[ext_resource type="AudioStream" uid="uid://cjdewu1050t80" path="res://assets/sound/Summon Screech 1.wav" id="14_aqndk"]
+[ext_resource type="AudioStream" uid="uid://dc14dh7q6i16p" path="res://assets/sound/Summon Screech 2.wav" id="15_uoi3y"]
+[ext_resource type="AudioStream" uid="uid://jt3hdbkpujap" path="res://assets/sound/Summon Screech 3.wav" id="16_yjcm3"]
+[ext_resource type="AudioStream" uid="uid://bbae1p4e2oq60" path="res://assets/sound/Summon Chirp 1.wav" id="17_uf88l"]
+[ext_resource type="AudioStream" uid="uid://bn3l5jtmhvdqc" path="res://assets/sound/Summon Chirp 2.wav" id="18_iw81d"]
+[ext_resource type="AudioStream" uid="uid://dpha5j5fn32jt" path="res://assets/sound/Summon Chirp 3.wav" id="19_04x6n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8wydk"]
 radius = 50.0
@@ -450,27 +459,39 @@ stream_4/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_n2da1"]
 streams_count = 3
+stream_0/stream = ExtResource("11_m6dav")
 stream_0/weight = 1.0
+stream_1/stream = ExtResource("12_vugyf")
 stream_1/weight = 1.0
+stream_2/stream = ExtResource("13_4hjko")
 stream_2/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_e6iwu"]
 streams_count = 3
+stream_0/stream = ExtResource("14_aqndk")
 stream_0/weight = 1.0
+stream_1/stream = ExtResource("15_uoi3y")
 stream_1/weight = 1.0
+stream_2/stream = ExtResource("16_yjcm3")
 stream_2/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gncgg"]
 streams_count = 3
+stream_0/stream = ExtResource("17_uf88l")
 stream_0/weight = 1.0
+stream_1/stream = ExtResource("18_iw81d")
 stream_1/weight = 1.0
+stream_2/stream = ExtResource("19_04x6n")
 stream_2/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6ainq"]
 random_pitch = 1.1
 streams_count = 3
+stream_0/stream = ExtResource("17_uf88l")
 stream_0/weight = 1.0
+stream_1/stream = ExtResource("18_iw81d")
 stream_1/weight = 1.0
+stream_2/stream = ExtResource("19_04x6n")
 stream_2/weight = 1.0
 
 [node name="SmallBatEnemy" type="CharacterBody2D"]
